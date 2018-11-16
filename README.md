@@ -10,3 +10,8 @@ If ther are any bugs or reports, just directly open up an issue on this github a
 #####  - [Giveaway System | V1]()
 #####  - [Invite Manager | V1.1]()
 
+## Folders
+Commands are seperated by folder
+Commands/Events are seperated in their own folders
+
+
