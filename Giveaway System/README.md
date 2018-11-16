@@ -20,6 +20,9 @@ Make sure you use this command in a chat where there are little to no chatting a
 If you have any suggestions, feel free to contact me
 Also, please do not contact me for a giveaway end command, I am looking into it already
 
+## Commands
+ - gcreate
+
 ## Folders
 Commands are seperated by folder
 Commands/Events are seperated in their own folders
