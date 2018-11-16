@@ -31,7 +31,9 @@ playerinvite [@player] - Shows what invite the player used to join the server
 These events that are **REQUIRED** for the **playerinvite** command to work
 
 storeInvites - Store invites for all servers
+
 serverJoin - Stores the invites for the server
+
 memberJoin - Stores which invite the member used to join
 
 ## Folders
