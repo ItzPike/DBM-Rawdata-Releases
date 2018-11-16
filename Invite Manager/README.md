@@ -42,6 +42,7 @@ memberJoin - Stores which invite the member used to join
 
 ## Folders
 Commands are seperated by folder
+
 Commands/Events are seperated in their own folders
 
 
