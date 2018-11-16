@@ -5,17 +5,17 @@ Updates
 Fixed command **invitelk** command's check command parameter jumping to a non-existent action
 
 ## Information
-This is an invite manager that keeps track of an player's invites
-This also keeps tracks of how many players a user has invited
-A new function is getting what invite code/link a player used to join the server
+This is an invite manager that keeps track of an player's invites  
+This also keeps tracks of how many players a user has invited  
+A new function is getting what invite code/link a player used to join the server  
 
-Remember, this pulls from a list of ACTIVE invites so if an invite expired, it wouldn't show.
+Remember, this pulls from a list of ACTIVE invites so if an invite expired, it wouldn't show.  
 
-To use these commands, please make sure you have the npm module **"array-sort"**
+To use these commands, please make sure you have the npm module **"array-sort"**  
 
-If you want to change how many people are shown on the leaderboard at once, go to the invitetop run script and change the 10 in "let maxLeaderboardSpots = 10;" to whatever number of people you want to be displayed on the leaderboard.
+If you want to change how many people are shown on the leaderboard at once, go to the invitetop run script and change the 10 in "let maxLeaderboardSpots = 10;" to whatever number of people you want to be displayed on the leaderboard.  
 
-If you have any suggestions, feel free to contact me or open an issue on this github
+If you have any suggestions, feel free to contact me or open an issue on this github  
 
 
 ## Commands
@@ -28,13 +28,12 @@ If you have any suggestions, feel free to contact me or open an issue on this gi
 ## Events
 These events that are **REQUIRED** for the **playerinvite** command to work
 
-- storeInvites - Store invites for all servers
-- serverJoin - Stores the invites for the server
-- memberJoin - Stores which invite the member used to join
+- storeInvites - Store invites for all servers  
+- serverJoin - Stores the invites for the server  
+- memberJoin - Stores which invite the member used to join  
 
 ## Folders
-(O) Commands are separated by folder
-
+(O) Commands are separated by folder  
 (O) Commands/Events are separated in their own folders
 
 
