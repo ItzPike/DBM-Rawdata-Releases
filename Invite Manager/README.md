@@ -28,10 +28,11 @@ invitelk [invite code/invite link] - Gives information about the invite
 playerinvite [@player] - Shows what invite the player used to join the server
 
 ## Events
-These events that are **REQUIRED** for the `playerinvite` command to work
-storeInvites|InviteManager - Store invites for all servers
-serverJoin|InviteManager - Stores the invites for the server
-memberJoin|InviteManager - Stores which invite the member used to join
+These events that are **REQUIRED** for the **playerinvite** command to work
+
+storeInvites - Store invites for all servers
+serverJoin - Stores the invites for the server
+memberJoin - Stores which invite the member used to join
 
 ## Folders
 Commands are seperated by folder
