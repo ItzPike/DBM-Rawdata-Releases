@@ -1,0 +1,32 @@
+{
+  "name": "memberJoin|InviteManager",
+  "temp": "memberJoined",
+  "event-type": "6",
+  "_id": "bbJRl",
+  "actions": [
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "let memberThatJoined = tempVars(\"memberJoined\");\nlet memberUsername = memberThatJoined.username;\nlet invites = globalVars(\"globalGuildDatabase\");\nconst _this = this;\n\nasync function getInvites() {\n    const ei = invites[memberThatJoined.guild.id];\n    let guildInvites = await memberThatJoined.guild.fetchInvites();\n    guildInvites = guildInvites.array();\n    invites[memberThatJoined.guild.id] = guildInvites;\n    _this.storeValue(invites, 3, \"globalGuildDatabase\", cache);\n    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);\n    const inviter = client.users.get(invite.inviter.id);\n    _this.storeValue(invite.code, 1, \"inviteCode\", cache);\n    _this.callNextAction(cache);\n}\n\ngetInvites();",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "serverID",
+      "name": "Store Server Info"
+    },
+    {
+      "member": "2",
+      "varName": "memberJoined",
+      "dataName": "${tempVars(\"serverID\")}.inviteManager",
+      "changeType": "0",
+      "value": "tempVars(\"inviteCode\")",
+      "name": "Control Member Data"
+    }
+  ]
+}

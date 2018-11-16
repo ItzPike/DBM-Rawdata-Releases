@@ -1,0 +1,16 @@
+{
+  "name": "invitetop",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "yYbmq",
+  "actions": [
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const arraySort = require('array-sort');\n\nasync function getInvites() {\n    try {\n        let guildInvites = await msg.guild.fetchInvites();\n    let maxLeaderboardSpots = 10;\n    let finalMsg = \"\";\n    let sortedGuildInvites = [];\n    let CombineResult = [];\n    guildInvites = guildInvites.array();\n\n    arraySort(guildInvites, 'uses', {\n        reverse: true\n    });\n\n    guildInvites.forEach(invites => {\n        sortedGuildInvites.push([invites.inviter.username, invites.uses]);\n    });\n\n    sortedGuildInvites.forEach(function(o) {\n        var existing = CombineResult.filter(function(i) { return i[0] === o[0] })[0];\n    \n        if (!existing)\n        CombineResult.push(o);\n        else\n            existing[1] += o[1];\n    });\n\n    if (CombineResult.length >= maxLeaderboardSpots) {\n        for (var i = 0; i < maxLeaderboardSpots; i++) {\n            finalMsg = finalMsg + CombineResult[i][0] + \" - \" + CombineResult[i][1] + \"\\n\"\n          }\n          msg.channel.send(finalMsg);\n          \n    } else {\n        for (var i = 0; i < CombineResult.length; i++) {\n            finalMsg = finalMsg + CombineResult[i][0] + \" - \" + CombineResult[i][1] + \"\\n\"\n          }\n          msg.channel.send({\n            embed: {\n                color: 0x00b200,\n                author: {\n                    name: \"Server Invite Leaderboard\",\n                    icon_url: msg.author.avatarURL\n                },\n                description: finalMsg\n            }\n        });\n    }\n    }\n    catch(err) {\n        console.log(err);\n    }\n}\n\ngetInvites();",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    }
+  ]
+}

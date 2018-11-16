@@ -1,0 +1,45 @@
+{
+  "name": "inviteinfo",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "HIPRW",
+  "actions": [
+    {
+      "member": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "memberCheck",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "memberCheck",
+      "comparison": "3",
+      "iftrue": "2",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable Type"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const arraySort = require('array-sort');\n\nasync function getInvites() {\n    let guildInvites = await msg.guild.fetchInvites();\n    guildInvites = guildInvites.array();\n    console.log(guildInvites.length);\n\n    arraySort(guildInvites, 'uses', {\n        reverse: true\n    });\n\n    let inviteInfo = [];\n\n    guildInvites.forEach(function(invite) {\n        if (invite.inviter.id == msg.author.id) {\n            inviteInfo.push([invite.code, invite.uses]);\n        }\n    });\n\n    if (inviteInfo.length > 0) {\n        var finalMsg = \"\";\n        var totalUses = 0;\n\n        inviteInfo.forEach(function(turnToTable) {\n            finalMsg = finalMsg + turnToTable[0] + \" - \" + turnToTable[1] + \"\\n\";\n            totalUses = totalUses + turnToTable[1];\n        });\n\n        msg.channel.send({\n            embed: {\n                color: 0x00b200,\n                author: {\n                    name: \"Your Invites\",\n                    icon_url: msg.author.avatarURL\n                },\n                fields: [{\n                    name: \"Invite Codes and Uses\",\n                    value: finalMsg\n                }],\n                description: \"Total amount of invites - \" + totalUses\n            }\n        });\n\n\n    } else {\n        msg.channel.send({\n            embed: {\n                color: 0xff6666,\n                author: {\n                    name: \"Error - No Invite Links\",\n                    icon_url: msg.author.avatarURL\n                },\n                description: \"You currently have no invite links for this server\"\n            }\n        });\n    }\n\n\n}\n\ngetInvites();",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const arraySort = require('array-sort');\n\nasync function getInvites() {\n    let guildInvites = await msg.guild.fetchInvites();\n    let mentionedPerson = tempVars(\"memberCheck\");\n    guildInvites = guildInvites.array();\n\n    arraySort(guildInvites, 'uses', {\n        reverse: true\n    });\n\n    let inviteInfo = [];\n\n    guildInvites.forEach(function(invite) {\n        if (invite.inviter.id == mentionedPerson.id) {\n            inviteInfo.push([invite.code, invite.uses]);\n        }\n    });\n\n    if (inviteInfo.length > 0) {\n        var finalMsg = \"\";\n        var totalUses = 0;\n\n        inviteInfo.forEach(function(turnToTable) {\n            finalMsg = finalMsg + turnToTable[0] + \" - \" + turnToTable[1] + \"\\n\";\n            totalUses = totalUses + turnToTable[1];\n        });\n\n        msg.channel.send({\n            embed: {\n                color: 0x00b200,\n                author: {\n                    name: msg.mentions.users.first().username + \"'s Invites\",\n                    icon_url: msg.mentions.users.first().avatarURL\n                },\n                fields: [{\n                    name: \"Invite Codes and Uses\",\n                    value: finalMsg\n                }],\n                description: \"Total amount of invites - \" + totalUses\n            }\n        });\n\n\n    } else {\n        msg.channel.send({\n            embed: {\n                color: 0xff6666,\n                author: {\n                    name: \"Error - No Invite Links\",\n                    icon_url: msg.mentions.users.first().avatarURL\n                },\n                description: mentionedPerson + \" does not currently have any invite links for this server\"\n            }\n        });\n    }\n\n\n}\n\ngetInvites();",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    }
+  ]
+}

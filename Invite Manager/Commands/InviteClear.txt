@@ -1,0 +1,106 @@
+{
+  "name": "inviteclear",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "Mwyhb",
+  "actions": [
+    {
+      "member": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "memberCheck",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "permission": "MANAGE_GUILD",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "10",
+      "name": "Check Member Permissions"
+    },
+    {
+      "storage": "1",
+      "varName": "memberCheck",
+      "comparison": "3",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "6",
+      "name": "Check Variable Type"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const arraySort = require('array-sort');\nasync function getInvites() {\n    let guildInvites = await msg.guild.fetchInvites();\n    guildInvites = guildInvites.array();\n\n    let inviteInfo = [];\n\n    for (var i = 0; i < guildInvites.length; i++) {\n        if (guildInvites[i].inviter.id == msg.mentions.users.first().id) {\n            inviteInfo.push(guildInvites[i]);\n        }\n    }\n\n    if (inviteInfo.length > 0) {\n        inviteInfo.forEach(inviteToDelete => {\n            inviteToDelete.delete(\"Invite cleared/deleted by \" + msg.author.username);\n        });\n        msg.channel.send({\n            embed: {\n                color: 0x00b200,\n                author : {\n                    name: \"Successfully Cleared Invites\",\n                    icon_url: msg.author.avatarURL\n                },\n                description: \"Cleared \" + inviteInfo.length + \" invites from \" + msg.mentions.users.first()\n            }\n        })\n    } else {\n        msg.channel.send({\n            embed: {\n                color: 0xff6666,\n                author: {\n                    name: \"Error - No Invite Links\",\n                    icon_url: msg.author.avatarURL\n                },\n                description: msg.mentions.users.first() + \" currently has no invite links for this server\"\n            }\n        });\n    }\n}\n\ngetInvites();",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "Error - No Users Mentioned",
+      "author": "",
+      "color": "ff6666",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "errorEmbedNUM",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "errorEmbedNUM",
+      "message": "Please mention a player to clear their invites!\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "errorEmbedNUM",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "Error - No Permission",
+      "author": "",
+      "color": "ff6666",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "errorEmbedNP",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "errorEmbedNP",
+      "message": "Please mention a player to clear their invites!\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "errorEmbedNP",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}

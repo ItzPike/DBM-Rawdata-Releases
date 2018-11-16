@@ -1,0 +1,16 @@
+{
+  "name": "storeInvites|InviteManager",
+  "temp": "",
+  "event-type": "1",
+  "_id": "CdzGK",
+  "actions": [
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const fs = require('fs');\nvar invites = {};\n\nclient.guilds.forEach(g => {\n    g.fetchInvites().then(guildInvites => {\n      try{\n        invites[g.id] = guildInvites;\n      }\n      catch(error) {\n        console.log(error);\n      }\n    });\n  });\n\nthis.storeValue(invites, 3, \"globalGuildDatabase\", cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    }
+  ]
+}

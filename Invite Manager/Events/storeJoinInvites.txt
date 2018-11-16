@@ -1,0 +1,24 @@
+{
+  "name": "serverJoinInvites|InviteManager",
+  "temp": "",
+  "event-type": "4",
+  "_id": "zUtVB",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "serverObject",
+      "name": "Store Server Info"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "_this = this;\nvar guildServer = tempVars(\"serverObject\");\nvar globalGuildDatabase = globalVars(\"globalGuildDatabase\");\nserverID = tempVars(\"serverID\");\n\nasync function getInvites() {\n   var guildInvites = guildServer.fetchInvites()\n   globalGuildDatabase[guildServer.id] = guildInvites;\n   this.storeValue(invites, 3, \"globalGuildDatabase\", cache);\n}",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    }
+  ]
+}

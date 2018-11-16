@@ -1,0 +1,64 @@
+{
+  "name": "invitelk",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "BxYOv",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "checkCode",
+      "name": "Store Command Params"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "1",
+      "code": "var checkCode = tempVars(\"checkCode\");\nvar checkCodeLC = tempVars(\"checkCode\").toLowerCase();\nasync function getInvite() {\n\n    let guildInvites = await msg.guild.fetchInvites();\n    var inviteJSON = \"\";\n    var validCode = false;\n\n    if (checkCodeLC.includes(\"discord.gg\")) {\n        try {\n            var inviteResult = await client.fetchInvite(checkCode);\n            checkCode = inviteResult.code;\n            console.dir(inviteResult);\n        }\n        catch(error) {\n            validCode = false;\n        }\n    }\n\n    await guildInvites.forEach(invite => {\n        if (invite.code == checkCode) {\n            inviteJSON = invite;\n            validCode = true;\n        }\n    });\n\n\n    if(validCode == true) {\n        var isTemporary = inviteJSON.temporary.toString();\n        msg.channel.send({\n            embed: {\n             color: 0x00b200,\n             author: {\n                name: \"Invite Code - \" + inviteJSON.code,\n                icon_url: msg.author.avatarURL\n            },\n            description: \"Code created by: \" + inviteJSON.inviter + \"\\n Uses: \" + inviteJSON.uses +\"\\n\" + \"Channel: \" + bot.channels.get(inviteJSON.channel.id) + \"\\nIs Temporary Invite: \" + isTemporary.charAt(0).toUpperCase() + isTemporary.slice(1)\n            }\n        });\n    } else {\n        msg.channel.send({\n            embed: {\n                color: 0xff6666,\n                author: {\n                    name: \"Error - Invalid Invite Code\",\n                    icon_url: msg.author.avatarURL\n                },\n                description: \"Please enter a **VALID** invite code to check. Make sure the invite code is from this server.\"\n            }\n        });\n    }\n}\n     \n  getInvite();",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "Error - No Link Provided",
+      "author": "",
+      "color": "ff6666",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "You didn't provide any invite links or code while using the command\nPlease try again",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}
