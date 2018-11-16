@@ -1,5 +1,3 @@
-# Invite Manager
-
 # Invite Manager 
 V1.2 - Version 1.2
 
@@ -21,18 +19,18 @@ If you have any suggestions, or problems, open an issue on this github
 
 
 ## Commands
-inviteinfo [@player] or !inviteinfo - To check a player's invites 
-inviteclear - Clear a player's invites (Requires manage server permission to use)
-invitetop - Players with the most invites
-invitelk [invite code/invite link] - Gives information about the invite
-playerinvite [@player] - Shows what invite the player used to join the server
+- inviteinfo [@player] or !inviteinfo - To check a player's invites 
+- inviteclear - Clear a player's invites (Requires manage server permission to use)
+- invitetop - Players with the most invites
+- invitelk [invite code/invite link] - Gives information about the invite
+- playerinvite [@player] - Shows what invite the player used to join the server
 
 ## Events
 These events that are **REQUIRED** for the **playerinvite** command to work
 
-storeInvites - Store invites for all servers
-serverJoin - Stores the invites for the server
-memberJoin - Stores which invite the member used to join
+- storeInvites - Store invites for all servers
+- serverJoin - Stores the invites for the server
+- memberJoin - Stores which invite the member used to join
 
 ## Folders
 Commands are separated by folder
