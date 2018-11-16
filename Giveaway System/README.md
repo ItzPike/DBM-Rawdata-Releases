@@ -4,15 +4,15 @@
 Version 1 - Release
 
 ## Information
-This is new giveaway system with the latest await response
-There is only 1 command, and that is to setup the giveaway
-It will loop you through prompts that ask you for information and it'll setup the giveaway for you
-You will respond with the information it asks you
+- This is new giveaway system with the latest await response
+- There is only 1 command, and that is to setup the giveaway
+- It will loop you through prompts that ask you for information and it'll setup the giveaway for you
+- You will respond with the information it asks you
 
-First, I'll ask for you what you are giving away
-Secondly, I'll ask you for how many winners you want (As many as you want)
-Then, I'll ask you for how long the giveaway will last in days/hours/minutes [1d,5m,3h, etc.]
-After that, I'll ask you for what channel you want the giveaway to be hosted in
+- First, it'll ask for you what you are giving away 
+- Secondly, it'll ask you for how many winners you want (As many as you want)
+- Then, I'll ask you for how long the giveaway will last in days/hours/minutes [1d,5m,3h, etc.]
+- After that, I'll ask you for what channel you want the giveaway to be hosted in
 
 There is a failsafe along the setup to make sure you did it correctly
 Make sure you use this command in a chat where there are little to no chatting at all
