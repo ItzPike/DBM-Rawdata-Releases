@@ -15,7 +15,7 @@ To use these commands, please make sure you have the npm module **"array-sort"**
 
 If you want to change how many people are shown on the leaderboard at once, go to the invitetop run script and change the 10 in "let maxLeaderboardSpots = 10;" to whatever number of people you want to be displayed on the leaderboard.
 
-If you have any suggestions, or problems, open an issue on this github
+If you have any suggestions, feel free to contact me or open an issue on this github
 
 
 ## Commands
