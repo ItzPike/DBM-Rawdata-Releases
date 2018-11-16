@@ -21,7 +21,7 @@ The command will "timeout" after 20 messages that are sent in the channel or 20 
 
 This system **WILL** check if the message is sent by the command author for the await responses  
 You need the **Manage Messages** permission to use the gcreate command unless changed  
-If you have any suggestions, feel free to contact me or open an issue on this github  
+If you have any suggestions or issues, feel free to contact me or open an issue on this github  
 
 Also, please do not contact me for a giveaway end command, I am looking into it already
 
