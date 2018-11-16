@@ -22,9 +22,13 @@ If you have any suggestions, or problems, open an issue on this github
 
 ## Commands
 inviteinfo [@player] or !inviteinfo - To check a player's invites 
+
 inviteclear - Clear a player's invites (Requires manage server permission to use)
+
 invitetop - Players with the most invites
+
 invitelk [invite code/invite link] - Gives information about the invite
+
 playerinvite [@player] - Shows what invite the player used to join the server
 
 ## Events
