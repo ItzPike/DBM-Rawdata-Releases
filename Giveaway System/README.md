@@ -24,7 +24,8 @@ Also, please do not contact me for a giveaway end command, I am looking into it 
  - gcreate
 
 ## Folders
-Commands are seperated by folder
-Commands/Events are seperated in their own folders
+(O) Commands are seperated by folder
+
+(O) Commands/Events are seperated in their own folders
 
 
