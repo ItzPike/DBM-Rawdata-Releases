@@ -33,7 +33,7 @@ These events that are **REQUIRED** for the **playerinvite** command to work
 - memberJoin - Stores which invite the member used to join
 
 ## Folders
-Commands are separated by folder
-Commands/Events are separated in their own folders
+(O) Commands are separated by folder
+(O) Commands/Events are separated in their own folders
 
 
