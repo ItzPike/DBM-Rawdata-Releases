@@ -34,6 +34,7 @@ These events that are **REQUIRED** for the **playerinvite** command to work
 
 ## Folders
 (O) Commands are separated by folder
+
 (O) Commands/Events are separated in their own folders
 
 
