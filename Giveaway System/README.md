@@ -19,6 +19,8 @@ Make sure you use this command in a chat where there are little to no chatting a
 
 The command will "timeout" after 20 messages that are sent in the channel or 20 seconds to prevent any API spam and issues seeing the prompt itself
 
+This system **WILL** check if the message is sent by the command author for the await responses
+
 You need the **Manage Messages** permission to use the gcreate command unless changed
 
 If you have any suggestions, feel free to contact me or open an issue on this github
