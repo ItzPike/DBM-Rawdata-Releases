@@ -34,10 +34,10 @@ Also, please do not contact me for a giveaway end command, I am looking into it 
 
 ## Problems | Q/A
 
-Q: DBM Errors out whenever I try to run the command
+Q: DBM Errors out whenever I try to run the command  
 A: Try running the command with the command line, node bot.js instead of running it from within DBM
 
-Q: Client is not defined
-A: Make sure you have DBM Beta installed/on
+Q: Client is not defined  
+A: Make sure you have DBM Beta installed/on  
 
 
