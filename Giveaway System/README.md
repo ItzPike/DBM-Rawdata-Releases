@@ -32,4 +32,12 @@ Also, please do not contact me for a giveaway end command, I am looking into it 
 (O) Commands are seperated by folder  
 (O) Commands/Events are seperated in their own folders  
 
+## Problems | Q/A
+
+Q: DBM Errors out whenever I try to run the command
+A: Try running the command with the command line, node bot.js instead of running it from within DBM
+
+Q: Client is not defined
+A: Make sure you have DBM Beta installed/on
+
 
