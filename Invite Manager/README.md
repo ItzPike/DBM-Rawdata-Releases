@@ -32,6 +32,10 @@ These events that are **REQUIRED** for the **playerinvite** command to work
 - serverJoin - Stores the invites for the server  
 - memberJoin - Stores which invite the member used to join  
 
+## Warning
+These commands were all tested inside the windows command line and not ran within DBM
+All of this still should work within DBM as I have tested some of it before
+
 ## Folders
 (O) Commands are separated by folder  
 (O) Commands/Events are separated in their own folders
