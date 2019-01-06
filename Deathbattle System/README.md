@@ -27,7 +27,7 @@ Do not drag the resources folder itself but the things inside it
 
 ## Warning
 These commands were all tested inside the windows command line and not ran within DBM  
-Do NOT run this command while running the bot form DBM unless you risk an required re-installation of Jimp  
+These commands may not work while being ran within DBM, be advised
 
 My Node Version - v10.9.0   
 My NPM Version - v6.2.0  
