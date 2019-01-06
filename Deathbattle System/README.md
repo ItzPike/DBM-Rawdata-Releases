@@ -48,5 +48,8 @@ If you would like to DM directly for anything, go ahead!
 ## Progress
 Project started - 12/26/18  
 Finishing Date - 1/5/19  
-Testing Phase - 1/5/19 | Status: ~ In Progress ~ 9:24 EST  
+Testing Phase - 1/5/19 | Status: ~ In Progress ~ 9:24PM EST  
+(Update) Testing Phase - 1/6/19 | Status: Finished 2:25AM EST  
+  
+Secondary Testing - 1/6/19 | Status: ~ In Progress ~ 2:26 AM EST
 
