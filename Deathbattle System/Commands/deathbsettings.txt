@@ -1,0 +1,183 @@
+{
+  "name": "deathbsettings",
+  "permissions": "NONE",
+  "restriction": "2",
+  "_id": "OrGxm",
+  "actions": [
+    {
+      "storage": "3",
+      "varName": "deathbattleTest",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "22",
+      "name": "Check Variable"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "settingsInput",
+      "name": "Store Command Params"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "this.storeValue(tempVars(\"settingsInput\").toLowerCase(), 1, \"settingsInput\", cache);\nthis.callNextAction(cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "settingsInput",
+      "comparison": "6",
+      "value": "add",
+      "iftrue": "2",
+      "iftrueVal": "11",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "settingsInput",
+      "comparison": "6",
+      "value": "remove",
+      "iftrue": "2",
+      "iftrueVal": "13",
+      "iffalse": "0",
+      "iffalseVal": "15",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "settingsInput",
+      "comparison": "6",
+      "value": "list",
+      "iftrue": "2",
+      "iftrueVal": "19",
+      "iffalse": "0",
+      "iffalseVal": "24",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "settingsInput",
+      "comparison": "6",
+      "value": "info",
+      "iftrue": "2",
+      "iftrueVal": "16",
+      "iffalse": "0",
+      "iffalseVal": "18",
+      "name": "Check Variable"
+    },
+    {
+      "info": "19",
+      "storage": "1",
+      "varName2": "botPrefix",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "- Deathbattle Settings Help -\n`${tempVars(\"botPrefix\")}deathbsettings help` - Displays this help message with command information and usage\n`${tempVars(\"botPrefix\")}deathbsettings add` - Starts a prompt where you can add your own events/actions onto the current deathbattle events/actions\n`${tempVars(\"botPrefix\")}deathbsettings list` - Displays a lsit of deathbattle events/actions\n`${tempVars(\"botPrefix\")}deathbsettings remove {event/action}` - Removes a certain action from the deathbattle events/actions\n`${tempVars(\"botPrefix\")}deathbsettings restore` - Restores the default deathbattle events/actions\n`${tempVars(\"botPrefix\")}deathbsettings info [action/event]` - Shows info for provided action/event",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "1",
+      "code": "var damage;\nvar format;\nvar name;\nvar JSONPairs = [];\nconst fs = require('fs');\n\nasync function preloadStuff() {\n    await fs.readFile('resources/deathBattleTemp/actionPossibilities.json', function read(err, data) {\n        if (err) {\n            throw err;\n        }\n\n        const outputData = JSON.parse(data);\n\n        for(var i in outputData){\n            var val = outputData[i];\n            for(var j in val){\n                var sub_key = j;\n                JSONPairs.push(sub_key.toLowerCase());\n            }\n        }\n    });\n    setupPrompt();\n}\n\nfunction setupPrompt() {\n    msg.delete();\n    msg.channel.send('Please provide the name of the new deathbattle attack').then((messagePrompt) => {\n        msg.channel.awaitMessages(response => msg.content && response.author == msg.author, {\n                max: 1,\n                time: 30000,\n                errors: ['time'],\n            })\n            .then((collected) => {\n                if (JSONPairs.includes(collected.first().content.toLowerCase())) {\n                    messagePrompt.delete();\n                    msg.channel.send(msg.author + \", there is already a action/event named `\" + collected.first().content + \"`.\\nPlease re-execute this command and choose another name!\")\n                    .then(Errmsg => {\n                        Errmsg.delete(10000);\n                    });\n                } else {\n                msg.author.lastMessage.delete();\n                messagePrompt.edit('Deathbattle Attack - ' + collected.first().content + '\\n \\nIf your are satisfied with the name then please provide how much damage it will do (1-100), if not then please reply `cancel` to cancel the prompt to start over');\n                name = collected.first().content;\n                msg.channel.awaitMessages(response => msg.content && response.author == msg.author, {\n                        max: 1,\n                        time: 30000,\n                        errors: ['time'],\n                    })\n                    .then((collected) => {\n                        msg.author.lastMessage.delete();\n                        if (!isNaN(collected.first().content)) {\n                            damage = collected.first().content;\n                            messagePrompt.edit('Deathbattle Attack - ' + name + '\\nDamage - ' + damage + '\\n \\nIf your are satisfied with the name and damage then please provide the format for the attack which should contain {player1} and {player2}\\n For example, `{player1} attacks {player2} with a sword` \\n If you are not satisfied with the name and damage then please reply `cancel` to cancel the prompt to start over');\n                            msg.channel.awaitMessages(response => msg.content && response.author == msg.author, {\n                                    max: 1,\n                                    time: 30000,\n                                    errors: ['time'],\n                                })\n                                .then((collected) => {\n                                    msg.author.lastMessage.delete();\n                                    if (collected.first().content.includes('{player1}') && collected.first().content.includes('{player2}')) {\n\t\t\t\t\t\t\t\t\t\tformat = collected.first().content;\n\t\t\t\t\t\t\t\t\t\tvar tempFormat = format;\n\t\t\t\t\t\t\t\t\t\ttempFormat = tempFormat.replace(/{player1}/g, 'PlayerOne');\n\t\t\t\t\t\t\t\t\t\ttempFormat = tempFormat.replace(/{player2}/g, 'PlayerTwo');\n\t\t\t\t\t\t\t\t\t\ttempFormat = \"`\" + tempFormat + \" (\" + damage + \" DMG)`\";\n\t\t\t\t\t\t\t\t\t\tmessagePrompt.edit('Deathbattle Attack - ' + name + '\\nDamage - ' + damage + '\\nFormat - ' + format + '\\n\\nThis is how the message will appear in the deathbattle embed - ' + tempFormat + '\\n\\n If you are satisfied with what you see, please reply with `confirm`. Otherwise, please reply `cancel` to stop the prompt and restart the process');\n                                        msg.channel.awaitMessages(response => msg.content && response.author == msg.author, {\n                                                max: 1,\n                                                time: 30000,\n                                                errors: ['time'],\n                                            })\n                                            .then((collected) => {\n                                                msg.author.lastMessage.delete();\n\t\t\t\t\t\t\t\t\t\t\t\tif (collected.first().content.toLowerCase() == 'confirm') {\n                                                    messagePrompt.delete();\n\t\t\t\t\t\t\t\t\t\t\t\t\tfs.readFile('resources/deathBattleTemp/actionPossibilities.json', function read(err, data) {\n                                                        if (err) {\n                                                            throw err;\n                                                        }\n                                                        var actionPossibilitiesData = JSON.parse(data);\n                                                        actionPossibilitiesData.push({[name]:{'damage':damage,'format':format}});\n\n                                                        \n                                                        fs.writeFile(\"resources/deathBattleTemp/actionPossibilities.json\", JSON.stringify(actionPossibilitiesData), function(err) {\n                                                            if(err) {\n                                                                return console.log(err);\n                                                            }\n                                                            msg.channel.send(\"Successfully added new attack to the list of attacks for the deathbattle command!\")\n                                                                .then(Errmsg => {\n                                                                    Errmsg.delete(10000);\n                                                                });\n                                                        }); \n\n                                                    });\n\t\t\t\t\t\t\t\t\t\t\t\t} else if (collected.first().content.toLowerCase() == 'cancel') {\n                                                    messagePrompt.delete();\n                                                    msg.channel.send(msg.author + \", the command has been cancelled. \\nYou can go through the prompt again by re-executing the same command again.\")\n\t\t\t\t\t\t\t\t\t\t\t            .then(Errmsg => {\n\t\t\t\t\t\t\t\t\t\t\t\t            Errmsg.delete(10000);\n\t\t\t\t\t\t\t\t\t\t\t            });\n                                                    \n\t\t\t\t\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t}\n                                            })\n                                            .catch((error) => {\n                                                messagePrompt.delete();\n                                                msg.channel.send(msg.author + \", this command has timed out. To go through the prompt again please re-execute the same command.\")\n                                                    .then(Errmsg => {\n                                                        Errmsg.delete(10000);\n                                                    });\n                                            });\n                                    } else if (collected.first().content.toLowerCase() == 'cancel') {\n                                        messagePrompt.delete();\n\n\t\t\t\t\t\t\t\t\t\tmsg.channel.send(msg.author + \", the command has been cancelled. \\nYou can go through the prompt again by re-executing the same command.\")\n\t\t\t\t\t\t\t\t\t\t\t.then(Errmsg => {\n\t\t\t\t\t\t\t\t\t\t\t\tErrmsg.delete(10000);\n\t\t\t\t\t\t\t\t\t\t\t});\n                                    } else {\n                                        messagePrompt.delete();\n\t\t\t\t\t\t\t\t\t\tmsg.channel.send(msg.author + \" this command has been cacelled due to an invalid response. \\nYou can go through the prompt again by re-executing the same command.\")\n\t\t\t\t\t\t\t\t\t\t\t.then(Errmsg => {\n\t\t\t\t\t\t\t\t\t\t\t\tErrmsg.delete(10000);\n\t\t\t\t\t\t\t\t\t\t});\n                                    }\n                                })\n                                .catch((error) => {\n                                    messagePrompt.delete();\n                                    msg.channel.send(msg.author + \", this command has timed out. To go through the prompt again please re-execute the same command.\")\n                                        .then(Errmsg => {\n                                            Errmsg.delete(10000);\n                                        });\n                                });\n                        } else if (collected.first().content.toLowerCase() == 'cancel') {\n                            messagePrompt.delete();\n                            msg.channel.send(msg.author + \", the command has been cancelled. \\nYou can go through the prompt again by re-executing the same command.\")\n                                .then(Errmsg => {\n                                    Errmsg.delete(10000);\n                                });\n                        } else {\n                            messagePrompt.delete();\n                            msg.channel.send(msg.author + \", the command has been cancelled as you didn't provide a valid number. To go through the prompt again please execute the same command again\")\n                                .then(Errmsg => {\n                                    Errmsg.delete(10000);\n                                });\n                        }\n                    })\n                    .catch((error) => {\n                        messagePrompt.delete();\n                        msg.channel.send(msg.author + \", this command has timed out. To go through the prompt again please re-execute the same command.\")\n                            .then(Errmsg => {\n                                Errmsg.delete(10000);\n                            });\n                    });\n                }\n            })\n            .catch((error) => {\n                messagePrompt.delete();\n                msg.channel.send(msg.author + \", this command has timed out. To go through the prompt again please re-execute the same command.\")\n                    .then(Errmsg => {\n                        Errmsg.delete(10000);\n                    });\n            });\n    });\n}\n\n\npreloadStuff();",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "firstParam",
+      "name": "Store Command Params"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "1",
+      "code": "var firstParam = tempVars('firstParam');\nconst fs = require('fs');\nvar jsonValue;\n\nfs.readFile('resources/deathBattleTemp/actionPossibilities.json', function read(err, data) {\n    if (err) {\n        throw err;\n    }\n    \n    var currentData = JSON.parse(data);\n    var JSONPairs = [];\n\n    for(var i in currentData){\n        var val = currentData[i];\n        for(var j in val){\n            var sub_key = j;\n            JSONPairs.push(sub_key.toLowerCase());\n        }\n    }\n\n    if (JSONPairs.includes(firstParam.toLowerCase())) {\n        for (i = 0; i < JSONPairs.length; i++) {\n            if (JSONPairs[i].toLowerCase() == firstParam.toLowerCase()) {\n                jsonValue = i;\n                deleteAction();\n                break;\n            }\n        }\n    } else {\n        msg.channel.send(msg.author + \", you have not provided a valid action/event. \\nPlease re-execute the command and enter a valid action/event.\")\n            .then(Errmsg => {\n                Errmsg.delete(10000);\n             });\n        msg.delete();\n    }\n\n    function deleteAction() {\n        if (jsonValue == 0) {\n            currentData.splice(0,1);\n        } else {\n            currentData.splice(jsonValue,jsonValue);\n        }\n        fs.writeFile(\"resources/deathBattleTemp/actionPossibilities.json\", JSON.stringify(currentData), function(err) {\n            if(err) {\n                return console.log(err);\n            }\n        });\n        msg.channel.send(msg.author + \", the action/event `\" + firstParam + \"` has been deleted.\")\n            .then(Errmsg => {\n                Errmsg.delete(10000);\n             });\n        msg.delete();\n    }\n\n});",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "firstParam",
+      "name": "Store Command Params"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "1",
+      "code": "var firstParam = tempVars('firstParam');\nconst fs = require('fs');\nvar jsonValue;\n\nfs.readFile('resources/deathBattleTemp/actionPossibilities.json', function read(err, data) {\n    if (err) {\n        throw err;\n    }\n    \n    var originalData = JSON.parse(data);\n    var currentData = JSON.parse(data);\n    var JSONPairs = [];\n    var originalJSONPairs = [];\n\n    for(var i in currentData){\n        var val = currentData[i];\n        for(var j in val){\n            var sub_key = j;\n            JSONPairs.push(sub_key.toLowerCase());\n            originalJSONPairs.push(sub_key);\n        }\n    }\n\n    if (JSONPairs.includes(firstParam.toLowerCase())) {\n        for (i = 0; i < JSONPairs.length; i++) {\n            if (JSONPairs[i].toLowerCase() == firstParam.toLowerCase()) {\n                jsonValue = i;\n                showEmbed();\n                break;\n            }\n        }\n    } else {\n        msg.channel.send(msg.author + \", you have not provided a valid action/event. \\nPlease re-execute the command and enter a valid action/event.\")\n            .then(Errmsg => {\n                Errmsg.delete(10000);\n             });\n        msg.delete();\n    }\n\n    function showEmbed() {\n            originalJSONPairs.push(sub_key);\n        const dataName = originalJSONPairs[jsonValue];\n        const dataSet = originalData[jsonValue][dataName];\n        var formatToChange = dataSet.format;\n        formatToChange = formatToChange.replace(/{player1}/g, '__PlayerOne__');\n\t\tformatToChange = formatToChange.replace(/{player2}/g, '__PlayerTwo__');\n        msg.channel.send({embed: {\n            color: 0x0892d0,\n            description: \"Name: `\" + dataName + \"`\\nDamage Count: `\" + dataSet.damage + \"`\\nFormat: `\" + dataSet.format + \"`\\nFormat Example: \" + formatToChange\n          }});\n    }\n\n});",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "19",
+      "storage": "1",
+      "varName2": "botPrefix",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "1",
+      "code": "const fs = require('fs');\nvar finalList = \"\";\nconst botPrefix = tempVars(\"botPrefix\");\n\nfs.readFile('resources/deathBattleTemp/actionPossibilities.json', function read(err, data) {\n    if (err) {\n        throw err;\n    }\n\n    var JSONData = JSON.parse(data);\n    for (i = 0; i < JSONData.length; i++) {\n        var JSONObjectName = Object.keys(JSONData[i])[0];\n        finalList = finalList + JSONObjectName + \"\\n\";\n    }\n\n    msg.channel.send({embed: {\n        color: 0x0892d0,\n        title: \"Deathbattle Actions/Event List\",\n        description: \"The follow is the list of actions and events that happen during a deathbattle.\\nIf you would like more information about the actions, please do `\" + botPrefix + \"deathbsettings info [action]`\\n\\n\" + finalList,\n        timestamp: new Date()\n      }\n    });\n});",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "19",
+      "storage": "1",
+      "varName2": "botPrefix",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Something is wrong with the deathbattle actionPossibilities.json or sourceimg.png\nThe command cannnot be continued\n\nPlease run ${tempVars(\"botPrefix\")}deathbattlerestore to restore the actionPossibilites.json file to default state",
+      "storage": "1",
+      "varName2": "err1",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "err1",
+      "name": "Delete Message"
+    }
+  ]
+}

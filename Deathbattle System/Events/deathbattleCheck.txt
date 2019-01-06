@@ -1,0 +1,34 @@
+{
+  "name": "deathBattleCheck",
+  "temp": "",
+  "event-type": "1",
+  "_id": "DxJFS",
+  "actions": [
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "const fs = require('fs');\nconst _this = this;\nvar passCount = 0;\n\nif (fs.existsSync('resources/deathBattleTemp/actionPossibilities.json')) {\nfs.readFile('resources/deathBattleTemp/actionPossibilities.json', function read(err, data) {\n    if (err) {\n        _this.callNextAction(cache);\n    }\n    \n    var currentData = JSON.parse(data);\n    var JSONPairs = [];\n    for(var i in currentData){\n        var val = currentData[i];\n        for(var j in val){\n            var sub_key = j;\n            JSONPairs.push(sub_key);\n        }\n    }\n\n    var JSONPairsLength = currentData.length;\n\n    for (i = 0; i < JSONPairs.length; i++) {\n        const JSONData = currentData[i][JSONPairs[i]];\n        if (JSONData.hasOwnProperty('damage') && JSONData.hasOwnProperty('format') && !isNaN(JSONData.damage)) {\n            passCount = passCount + 1; \n        }\n    }\n\n    if (fs.existsSync('resources/deathBattleTemp/sourceimg.png')) {\n        passCount = passCount + 1;\n    }\n\n    if (passCount > currentData.length) {\n        _this.storeValue(\"TestPass\", 1, \"testResult\", cache);\n        _this.callNextAction(cache);\n    } else {\n        _this.callNextAction(cache);\n    }\n});\n} else {\n   _this.callNextAction(cache);\n}",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "testResult",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "deathbattleTest",
+      "changeType": "0",
+      "value": "\"t23oigh2ig\"",
+      "name": "Control Variable"
+    }
+  ]
+}

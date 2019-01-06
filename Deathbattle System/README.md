@@ -11,11 +11,19 @@ Remember to drag the components in the resources folder to the bot resource fold
 Do not drag the resources folder itself but the things inside it  
 
 ## Commands
+- deathbsettings help - Displays this help message with command information and usage  
+- deathbsettings add - Starts a prompt where you can add your own events/actions onto the current deathbattle events/actions  
+- peathbsettings list - Displays a lsit of deathbattle events/actions  
+- deathbsettings remove {event/action} - Removes a certain action from the deathbattle events/actions  
+- deathbsettings info [action/event] - Shows info for provided action/event  
+
 - deathbattle [@player] || deathbattle [@player] [@player]  
-- deathbsettings list || info || add || remove || restore  
+
+- deathbattlerestore - Brings up a prompt to restore default files that are needed to run the command  
 
 ## Events
-- deathBattleCheck - Check all files that are needed for the commands to work properly and if the check fails it will disable all deathbattle commands
+- deathBattleCheck - Check all files on startup that are needed for the commands to work properly and if the check fails it will disable all deathbattle commands
+- deathBattleCheck|Interval - Check all files on an interval that are needed for the commands to work properly and if the check fails it will disable all deathbattle commands
 
 ## Warning
 These commands were all tested inside the windows command line and not ran within DBM  
@@ -26,7 +34,7 @@ My NPM Version - v6.2.0
 
 ## Required Modules
 Jimp (npm i jimp)  
-Execute npm i jimp from the command line that is inside your bot directory  
+Execute `npm i jimp` from the command line that is inside your bot directory  
 
 ## Folders
 (O) Commands are separated by folder   

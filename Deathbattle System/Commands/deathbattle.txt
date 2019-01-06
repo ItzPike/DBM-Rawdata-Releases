@@ -1,0 +1,254 @@
+{
+  "name": "deathbattle",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "cidXh",
+  "actions": [
+    {
+      "storage": "3",
+      "varName": "deathbattleTest",
+      "comparison": "0",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "31",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "if (msg.mentions.members.array().length == 2) {\n  this.storeValue(2, 1, \"mentionedCondition\", cache);\n  this.callNextAction(cache);\n} else if (msg.mentions.members.array().length == 1) {\n  this.storeValue(1, 1, \"mentionedCondition\", cache);\n  this.callNextAction(cache);\n} else {\n  msg.channel.send(':x: Please mention someone to do a deathbattle with or mention two people to have both of them battle each other')\n        .then(Errmsg => {\n            Errmsg.delete(10000);\n        });\n}",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "1",
+      "code": "var Jimp = require(\"jimp\");\nvar fileName = './resources/deathBattleTemp/sourceimg.png';\nvar playerone;\nvar playertwo;\nvar loadedImage;\nvar OutputfileName = Math.random().toString(36).substring(7);\nvar mentionedCondition = tempVars('mentionedCondition');\nvar messageMentions = msg.mentions.members.array();\nconst _this = this;\n\nif (mentionedCondition == 1) {\n    playerone = msg.author.username;\n    playertwo = messageMentions[0].user.username;\n\n    _this.storeValue(msg.author, 1, \"playerOne\", cache);\n    _this.storeValue(messageMentions[0].user, 1, \"playerTwo\", cache);\n\n    if (playerone.length > 32) {\n        playerone = playerone.substring(0, 29) + \"...\";\n    }\n\n    if (playertwo.length > 32) {\n        playertwo = playertwo.substring(0, 29) + \"...\";\n    }\n\n    Jimp.read(fileName)\n        .then(function(image) {\n            loadedImage = image;\n            Jimp.loadFont(Jimp.FONT_SANS_16_WHITE)\n                .then(function(font) {\n                    loadedImage.print(font, 6, 413, {\n                        text: playerone,\n                        alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER\n                    }, 259, 430)\n                    loadedImage.print(font, 360, 413, {\n                            text: playertwo,\n                            alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER\n                        }, 259, 430)\n                        .write(\"./resources/deathBattleTemp/\" + OutputfileName + \".png\");\n                    _this.storeValue(OutputfileName, 1, \"fileName\", cache);\n                    _this.callNextAction(cache);\n                })\n\n                .catch(function(err) {\n                    console.log(err);\n                });\n        })\n} else {\n    playerone = messageMentions[0].user.username;\n    playertwo = messageMentions[1].user.username;\n\n    _this.storeValue(messageMentions[0].user, 1, \"playerOne\", cache);\n    _this.storeValue(messageMentions[1].user, 1, \"playerTwo\", cache);\n    if (playerone.length > 32) {\n        playerone = playerone.substring(0, 29) + \"...\";\n    }\n\n    if (playertwo.length > 32) {\n        playertwo = playertwo.substring(0, 29) + \"...\";\n    }\n\n    Jimp.read(fileName)\n        .then(function(image) {\n            loadedImage = image;\n            Jimp.loadFont(Jimp.FONT_SANS_16_WHITE)\n                .then(function(font) {\n                    loadedImage.print(font, 6, 413, {\n                        text: playerone,\n                        alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER\n                    }, 259, 430)\n                    loadedImage.print(font, 360, 413, {\n                            text: playertwo,\n                            alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER\n                        }, 259, 430)\n                        .write(\"./resources/deathBattleTemp/\" + OutputfileName + \".png\");\n                    _this.storeValue(OutputfileName, 1, \"fileName\", cache);\n                    _this.callNextAction(cache);\n                })\n\n                .catch(function(err) {\n                    console.log(err);\n                });\n        })\n}",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "mentionedCondition",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "17",
+      "name": "Check Variable"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "storage": "1",
+      "varName2": "cmdAuthorPFP",
+      "name": "Create Image from Avatar"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "mentionedPFPURL",
+      "name": "Store Member Info"
+    },
+    {
+      "url": "${tempVars(\"mentionedPFPURL\")}",
+      "storage": "1",
+      "varName": "mentionedUserPFP",
+      "name": "Create Image"
+    },
+    {
+      "url": "resources/deathBattleTemp/${tempVars(\"fileName\")}.png",
+      "storage": "1",
+      "varName": "baseImg",
+      "name": "Create Image"
+    },
+    {
+      "input": "",
+      "format": "",
+      "filename": "${tempVars(\"fileName\")}.png",
+      "filepath": "resources/deathBattleTemp",
+      "filetask": "3",
+      "name": "File Control"
+    },
+    {
+      "storage": "1",
+      "varName": "cmdAuthorPFP",
+      "width": "250",
+      "height": "260",
+      "name": "Resize Image"
+    },
+    {
+      "storage": "1",
+      "varName": "mentionedUserPFP",
+      "width": "250",
+      "height": "260",
+      "name": "Resize Image"
+    },
+    {
+      "storage": "1",
+      "varName": "baseImg",
+      "storage2": "1",
+      "varName2": "cmdAuthorPFP",
+      "x": "14",
+      "y": "134",
+      "mask": "0",
+      "name": "Draw Image on Image"
+    },
+    {
+      "storage": "1",
+      "varName": "baseImg",
+      "storage2": "1",
+      "varName2": "mentionedUserPFP",
+      "x": "358",
+      "y": "134",
+      "mask": "0",
+      "name": "Draw Image on Image"
+    },
+    {
+      "storage": "1",
+      "varName": "baseImg",
+      "channel": "0",
+      "varName2": "",
+      "message": "",
+      "name": "Send Image"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "1",
+      "code": "const fs = require('fs');\nconst Discord = require('discord.js');\nconst playerOne = tempVars(\"playerOne\");\nconst playerTwo = tempVars(\"playerTwo\");\nvar possibleActions;\n\nfs.readFile('resources/deathBattleTemp/actionPossibilities.json', function read(err, data) {\n    if (err) {\n        throw err;\n    }\n    possibleActions = JSON.parse(data);\n    processFile();\n});\n\nfunction processFile() {\n\t\n    var playerOneHealth = 100;\n    var playerTwoHealth = 100;\n    var currentPlayerGoing = Math.floor((Math.random() * 2) + 1);\n    var embedColor = 0x0000ff;\n    var attacksListed = [];\n\n    if (currentPlayerGoing == 1) {\n        attacksListed.push(\"🔹 \" +\"__\" + playerOne.username + \"__\" + \"has been randomly chosen to go first\" )\n    } else {\n        attacksListed.push(\"🔸\" +\"__\" + playerTwo.username + \"__\" + \"has been randomly chosen to go first\" )\n    }\n\t\n    var Attackembed = new Discord.RichEmbed()\n        .setTitle(\"💥 Battle started\")\n        .addField(playerOne.username, playerOneHealth + \"/100\", true)\n        .addField(playerTwo.username, playerTwoHealth + \"/100\", true)\n        .setColor(embedColor)\n\t\t.setDescription(attacksListed.join(\"\\n\"));\n\t\n    msg.channel.send(Attackembed)\n        .then((embedMessage) => {\n\t\t\t\n            function updateEmbed(atkListed) {\n\t\t\t\tconst TempAttackembed = new Discord.RichEmbed()\n\t\t\t\t\t.setTitle(\"💥 Battle started\")\n\t\t\t\t\t.addField(playerOne.username, playerOneHealth + \"/100\", true)\n\t\t\t\t\t.addField(playerTwo.username, playerTwoHealth + \"/100\", true)\n\t\t\t\t\t.setColor(embedColor)\n\t\t\t\t\t.setDescription(atkListed.join(\"\\n\"));\n\t\t\t\tAttackembed = TempAttackembed;\n                embedMessage.edit(TempAttackembed);\n            }\n\t\t\t\n\t\t\tfunction endEmbed(atkListed) {\n\t\t\t\tconst TempAttackembed = new Discord.RichEmbed()\n\t\t\t\t\t.setTitle(\"💥 Battle has concluded\")\n\t\t\t\t\t.addField(playerOne.username, playerOneHealth + \"/100\", true)\n\t\t\t\t\t.addField(playerTwo.username, playerTwoHealth + \"/100\", true)\n\t\t\t\t\t.setColor(embedColor)\n\t\t\t\t\t.setDescription(atkListed.join(\"\\n\"));\n                embedMessage.edit(TempAttackembed);\n\t\t\t}\n\n\t\t\tvar timeoutID = setInterval(battle, 1500);\n\t\t\t\n            async function battle() {\n\n                if (playerOneHealth > 0 && playerTwoHealth > 0) {\n\n                    const tempAttack = possibleActions[Math.floor(Math.random() * possibleActions.length)];\n                    const attackName = Object.getOwnPropertyNames(tempAttack)[0];\n                    const attackDmg = tempAttack[attackName].damage;\n                    var attackFormat = tempAttack[attackName].format;\n\n                    if (currentPlayerGoing == 1) {\n                        playerTwoHealth = playerTwoHealth - attackDmg;\n                        if (attacksListed.length < 3) {\n                            attackFormat = await attackFormat.replace(/{player1}/g,\"__\" + playerOne.username + \"__\");\n                            attackFormat = await attackFormat.replace(/{player2}/g,\"__\" + playerTwo.username + \"__\");\n                            attacksListed.push(\"🔹 \" + attackFormat + \" (\" + attackDmg + \" DMG)\");\n                            currentPlayerGoing = 2;\n                            embedColor = 0x00ff00;\n                            updateEmbed(attacksListed);\n                        } else {\n                            attackFormat = await attackFormat.replace(/{player1}/g,\"__\" + playerOne.username + \"__\");\n                            attackFormat = await attackFormat.replace(/{player2}/g,\"__\" + playerTwo.username + \"__\");\n                            attacksListed.splice(0, 1);\n                            attacksListed.push(\"🔹 \" + attackFormat + \" (\" + attackDmg + \" DMG)\");\n                            currentPlayerGoing = 2;\n                            embedColor = 0x00ff00;\n                            updateEmbed(attacksListed);\n                        }\n                    } else {\n                        playerOneHealth = playerOneHealth - attackDmg;\n                        if (attacksListed.length < 3) {\n                            attackFormat = await attackFormat.replace(/{player1}/g,\"__\" + playerTwo.username + \"__\");\n                            attackFormat = await attackFormat.replace(/{player2}/g,\"__\" + playerOne.username);\n                            attacksListed.push(\"🔸\" + attackFormat + \" (\" + attackDmg + \" DMG)\");\n                            currentPlayerGoing = 1;\n                            embedColor = 0xff0000;\n                            updateEmbed(attacksListed);\n                        } else {\n                            attackFormat = await attackFormat.replace(/{player1}/g, \"__\" + playerTwo.username + \"__\");\n                            attackFormat = await attackFormat.replace(/{player2}/g,\"__\" + playerOne.username + \"__\");\n                            attacksListed.splice(0, 1);\n                            attacksListed.push(\"🔸\" + attackFormat + \" (\" + attackDmg + \" DMG)\");\n                            currentPlayerGoing = 1;\n                            embedColor = 0xff0000;\n                            updateEmbed(attacksListed);\n                        }\n                    }\n\n                } else {\n                    if (playerTwoHealth <= 0) {\n                        if (attacksListed.length < 3) {\n                            attacksListed.splice(0, 1);\n                            attacksListed.push(\"🏆 __\" + playerOne.username + \"__ has won!\");\n\t\t\t\t\t\t\tplayerTwoHealth = 0;\n\t\t\t\t\t\t\tembedColor = 0xffff00;\n                            endEmbed(attacksListed);\n\t\t\t\t\t\t\tclearInterval(timeoutID);\n                        } else {\n                            attacksListed.push(\"🏆 __\" + playerOne.username + \"__ has won!\");\n\t\t\t\t\t\t\tplayerTwoHealth = 0;\n\t\t\t\t\t\t\tembedColor = 0xffff00;\n                            updateEmbed(attacksListed);\n                            endEmbed(attacksListed);\n\t\t\t\t\t\t\tclearInterval(timeoutID);\n                        }\n                    } else if (playerOneHealth <= 0) {\n                        if (attacksListed.length < 3) {\n                            attacksListed.splice(0, 1);\n                            attacksListed.push(\"🏆 __\" + playerTwo.username + \"__ has won!\");\n\t\t\t\t\t\t\tplayerOneHealth = 0;\n\t\t\t\t\t\t\tembedColor = 0xffff00;\n\t\t\t\t\t\t\tendEmbed(attacksListed);\n\t\t\t\t\t\t\tclearInterval(timeoutID);\n                        } else {\n                            attacksListed.push(\"🏆 __\" + playerTwo.username + \"__ has won!\");\n\t\t\t\t\t\t\tplayerOneHealth = 0;\n\t\t\t\t\t\t\tembedColor = 0xffff00;\n                            endEmbed(attacksListed);\n\t\t\t\t\t\t\tclearInterval(timeoutID);\n                        }\n                    }\n                }\n            }\n\t\t\t\n\t\t\t\n        });\n\n}",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "mentionedPFPURL",
+      "name": "Store Member Info"
+    },
+    {
+      "info": "2",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "playerTwoo",
+      "name": "Store Command Params"
+    },
+    {
+      "member": "2",
+      "varName": "playerTwoo",
+      "info": "16",
+      "storage": "1",
+      "varName2": "playerTwoPFP",
+      "name": "Store Member Info"
+    },
+    {
+      "url": "${tempVars(\"mentionedPFPURL\")}",
+      "storage": "1",
+      "varName": "mentionedPFP",
+      "name": "Create Image"
+    },
+    {
+      "url": "${tempVars(\"playerTwoPFP\")}",
+      "storage": "1",
+      "varName": "mentionedUserPFPTwo",
+      "name": "Create Image"
+    },
+    {
+      "url": "resources/deathBattleTemp/${tempVars(\"fileName\")}.png",
+      "storage": "1",
+      "varName": "baseImg",
+      "name": "Create Image"
+    },
+    {
+      "input": "",
+      "format": "",
+      "filename": "${tempVars(\"fileName\")}.png",
+      "filepath": "resources/deathBattleTemp",
+      "filetask": "3",
+      "name": "File Control"
+    },
+    {
+      "storage": "1",
+      "varName": "mentionedPFP",
+      "width": "250",
+      "height": "260",
+      "name": "Resize Image"
+    },
+    {
+      "storage": "1",
+      "varName": "mentionedUserPFPTwo",
+      "width": "250",
+      "height": "260",
+      "name": "Resize Image"
+    },
+    {
+      "storage": "1",
+      "varName": "baseImg",
+      "storage2": "1",
+      "varName2": "mentionedPFP",
+      "x": "14",
+      "y": "134",
+      "mask": "0",
+      "name": "Draw Image on Image"
+    },
+    {
+      "storage": "1",
+      "varName": "baseImg",
+      "storage2": "1",
+      "varName2": "mentionedUserPFPTwo",
+      "x": "358",
+      "y": "134",
+      "mask": "0",
+      "name": "Draw Image on Image"
+    },
+    {
+      "storage": "1",
+      "varName": "baseImg",
+      "channel": "0",
+      "varName2": "",
+      "message": "",
+      "name": "Send Image"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "1",
+      "code": "const fs = require('fs');\nconst Discord = require('discord.js');\nconst playerOne = tempVars(\"playerOne\");\nconst playerTwo = tempVars(\"playerTwo\");\nvar possibleActions;\n\nfs.readFile('resources/deathBattleTemp/actionPossibilities.json', function read(err, data) {\n    if (err) {\n        throw err;\n    }\n    possibleActions = JSON.parse(data);\n    processFile();\n});\n\nfunction processFile() {\n\t\n    var playerOneHealth = 100;\n    var playerTwoHealth = 100;\n    var currentPlayerGoing = Math.floor((Math.random() * 2) + 1);\n    var embedColor = 0x0000ff;\n    var attacksListed = [];\n\n    if (currentPlayerGoing == 1) {\n        attacksListed.push(\"🔹 \" +\"__\" + playerOne.username + \"__\" + \"has been randomly chosen to go first\" )\n    } else {\n        attacksListed.push(\"🔸\" +\"__\" + playerTwo.username + \"__\" + \"has been randomly chosen to go first\" )\n    }\n\t\n    var Attackembed = new Discord.RichEmbed()\n        .setTitle(\"💥 Battle started\")\n        .addField(playerOne.username, playerOneHealth + \"/100\", true)\n        .addField(playerTwo.username, playerTwoHealth + \"/100\", true)\n        .setColor(embedColor)\n\t\t.setDescription(attacksListed.join(\"\\n\"));\n\t\n    msg.channel.send(Attackembed)\n        .then((embedMessage) => {\n\t\t\t\n            function updateEmbed(atkListed) {\n\t\t\t\tconst TempAttackembed = new Discord.RichEmbed()\n\t\t\t\t\t.setTitle(\"💥 Battle started\")\n\t\t\t\t\t.addField(playerOne.username, playerOneHealth + \"/100\", true)\n\t\t\t\t\t.addField(playerTwo.username, playerTwoHealth + \"/100\", true)\n\t\t\t\t\t.setColor(embedColor)\n\t\t\t\t\t.setDescription(atkListed.join(\"\\n\"));\n\t\t\t\tAttackembed = TempAttackembed;\n                embedMessage.edit(TempAttackembed);\n            }\n\t\t\t\n\t\t\tfunction endEmbed(atkListed) {\n\t\t\t\tconst TempAttackembed = new Discord.RichEmbed()\n\t\t\t\t\t.setTitle(\"💥 Battle has concluded\")\n\t\t\t\t\t.addField(playerOne.username, playerOneHealth + \"/100\", true)\n\t\t\t\t\t.addField(playerTwo.username, playerTwoHealth + \"/100\", true)\n\t\t\t\t\t.setColor(embedColor)\n\t\t\t\t\t.setDescription(atkListed.join(\"\\n\"));\n                embedMessage.edit(TempAttackembed);\n\t\t\t}\n\n\t\t\tvar timeoutID = setInterval(battle, 1500);\n\t\t\t\n            async function battle() {\n\n                if (playerOneHealth > 0 && playerTwoHealth > 0) {\n\n                    const tempAttack = possibleActions[Math.floor(Math.random() * possibleActions.length)];\n                    const attackName = Object.getOwnPropertyNames(tempAttack)[0];\n                    const attackDmg = tempAttack[attackName].damage;\n                    var attackFormat = tempAttack[attackName].format;\n\n                    if (currentPlayerGoing == 1) {\n                        playerTwoHealth = playerTwoHealth - attackDmg;\n                        if (attacksListed.length < 3) {\n                            attackFormat = await attackFormat.replace(/{player1}/g,\"__\" + playerOne.username + \"__\");\n                            attackFormat = await attackFormat.replace(/{player2}/g,\"__\" + playerTwo.username + \"__\");\n                            attacksListed.push(\"🔹 \" + attackFormat + \" (\" + attackDmg + \" DMG)\");\n                            currentPlayerGoing = 2;\n                            embedColor = 0x00ff00;\n                            updateEmbed(attacksListed);\n                        } else {\n                            attackFormat = await attackFormat.replace(/{player1}/g,\"__\" + playerOne.username + \"__\");\n                            attackFormat = await attackFormat.replace(/{player2}/g,\"__\" + playerTwo.username + \"__\");\n                            attacksListed.splice(0, 1);\n                            attacksListed.push(\"🔹 \" + attackFormat + \" (\" + attackDmg + \" DMG)\");\n                            currentPlayerGoing = 2;\n                            embedColor = 0x00ff00;\n                            updateEmbed(attacksListed);\n                        }\n                    } else {\n                        playerOneHealth = playerOneHealth - attackDmg;\n                        if (attacksListed.length < 3) {\n                            attackFormat = await attackFormat.replace(/{player1}/g,\"__\" + playerTwo.username + \"__\");\n                            attackFormat = await attackFormat.replace(/{player2}/g,\"__\" + playerOne.username);\n                            attacksListed.push(\"🔸\" + attackFormat + \" (\" + attackDmg + \" DMG)\");\n                            currentPlayerGoing = 1;\n                            embedColor = 0xff0000;\n                            updateEmbed(attacksListed);\n                        } else {\n                            attackFormat = await attackFormat.replace(/{player1}/g, \"__\" + playerTwo.username + \"__\");\n                            attackFormat = await attackFormat.replace(/{player2}/g,\"__\" + playerOne.username + \"__\");\n                            attacksListed.splice(0, 1);\n                            attacksListed.push(\"🔸\" + attackFormat + \" (\" + attackDmg + \" DMG)\");\n                            currentPlayerGoing = 1;\n                            embedColor = 0xff0000;\n                            updateEmbed(attacksListed);\n                        }\n                    }\n\n                } else {\n                    if (playerTwoHealth <= 0) {\n                        if (attacksListed.length < 3) {\n                            attacksListed.splice(0, 1);\n                            attacksListed.push(\"🏆 __\" + playerOne.username + \"__ has won!\");\n\t\t\t\t\t\t\tplayerTwoHealth = 0;\n\t\t\t\t\t\t\tembedColor = 0xffff00;\n                            endEmbed(attacksListed);\n\t\t\t\t\t\t\tclearInterval(timeoutID);\n                        } else {\n                            attacksListed.push(\"🏆 __\" + playerOne.username + \"__ has won!\");\n\t\t\t\t\t\t\tplayerTwoHealth = 0;\n\t\t\t\t\t\t\tembedColor = 0xffff00;\n                            updateEmbed(attacksListed);\n                            endEmbed(attacksListed);\n\t\t\t\t\t\t\tclearInterval(timeoutID);\n                        }\n                    } else if (playerOneHealth <= 0) {\n                        if (attacksListed.length < 3) {\n                            attacksListed.splice(0, 1);\n                            attacksListed.push(\"🏆 __\" + playerTwo.username + \"__ has won!\");\n\t\t\t\t\t\t\tplayerOneHealth = 0;\n\t\t\t\t\t\t\tembedColor = 0xffff00;\n\t\t\t\t\t\t\tendEmbed(attacksListed);\n\t\t\t\t\t\t\tclearInterval(timeoutID);\n                        } else {\n                            attacksListed.push(\"🏆 __\" + playerTwo.username + \"__ has won!\");\n\t\t\t\t\t\t\tplayerOneHealth = 0;\n\t\t\t\t\t\t\tembedColor = 0xffff00;\n                            endEmbed(attacksListed);\n\t\t\t\t\t\t\tclearInterval(timeoutID);\n                        }\n                    }\n                }\n            }\n\t\t\t\n\t\t\t\n        });\n\n}",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Something is wrong with the deathbattle actionPossibilities.json or sourceimg.png\nThe command cannnot be continued\n\nPlease run ${tempVars(\"botPrefix\")}deathbattlerestore to restore the actionPossibilites.json file to default state",
+      "storage": "1",
+      "varName2": "err1",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "err1",
+      "name": "Delete Message"
+    }
+  ]
+}
