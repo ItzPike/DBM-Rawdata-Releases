@@ -27,7 +27,7 @@ Do not drag the resources folder itself but the things inside it
 
 ## Warning
 These commands were all tested inside the windows command line and not ran within DBM  
-These commands may not work while being ran within DBM, be advised
+These commands may not work while being ran within DBM, so just be advised
 
 My Node Version - v10.9.0   
 My NPM Version - v6.2.0  
@@ -35,6 +35,12 @@ My NPM Version - v6.2.0
 ## Required Modules
 Jimp (npm i jimp)  
 Execute `npm i jimp` from the command line that is inside your bot directory  
+
+File System (npm i fs)
+Execute `npm i fs` from the command line that is inside your bot directory
+
+Request (npm i request)
+Execute `npm i request` from the command line that is inside your bot directory
 
 ## Folders
 (O) Commands are separated by folder   

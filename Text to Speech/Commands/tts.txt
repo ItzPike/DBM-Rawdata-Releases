@@ -1,0 +1,108 @@
+{
+  "name": "tts",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "UTRRc",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "12",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "📨 Generating MP3 file...",
+      "storage": "1",
+      "varName2": "promptOne",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "firstResponse",
+      "name": "Store Command Params"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "const googleTTS = require('google-tts-api');\nconst fs = require('fs');\nconst request = require('request');\nconst firstResponse = tempVars(\"firstResponse\");\nconst randomString =  Math.random().toString(36).substring(7);\nconst _this = this;\n\n\nif (firstResponse.length <= 200) {\ngoogleTTS(firstResponse, 'en', 1)   // speed normal = 1 (default), slow = 0.24\n.then(function (url) {\n  request\n  .get(url)\n  .on('error', function(err) {\n    // handle error\n  })\n  .pipe(fs.createWriteStream(\"resources/\" + randomString + '.mp3'));\n  _this.storeValue(randomString, 1, \"randomString\", cache);\n  _this.callNextAction(cache);\n})\n.catch(function (err) {\n  console.error(err.stack);\n});\n} else {\n    msg.channel.send(msg.author + \", please provide a text that has less than 200 characters\")\n                    .then(Errmsg => {\n                        Errmsg.delete(10000);\n                    });\n}\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "FirstNumber": "${tempVars(\"firstResponse\").length}",
+      "info": "2",
+      "SecondNumber": "10",
+      "storage": "1",
+      "varName": "waitTime",
+      "name": "Basic Math Operation"
+    },
+    {
+      "FirstNumber": "${tempVars(\"waitTime\")}",
+      "info": "0",
+      "SecondNumber": "1000",
+      "storage": "1",
+      "varName": "waitTime",
+      "name": "Basic Math Operation"
+    },
+    {
+      "time": "${tempVars(\"waitTime\")}",
+      "measurement": "0",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "promptOne",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "file": "resources/${tempVars(\"randomString\")}.mp3",
+      "message": "Here is the mp3\nText - ${tempVars(\"firstResponse\")}",
+      "name": "Send File"
+    },
+    {
+      "input": "",
+      "format": "",
+      "filename": "${tempVars(\"randomString\")}.mp3",
+      "filepath": "./resources",
+      "filetask": "3",
+      "name": "File Control"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Please provide a text to translate into speech ",
+      "storage": "1",
+      "varName2": "err1",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "err1",
+      "name": "Delete Message"
+    }
+  ]
+}
