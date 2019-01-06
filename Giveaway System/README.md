@@ -1,7 +1,7 @@
 # Giveaway System
 
 ## Version
-Version 1 - Release
+Version 1.1 - Calculation Fix
 
 ## Information
 This is new giveaway system with the latest await response  

@@ -1,5 +1,5 @@
 # Invite Manager 
-V1.2 - Version 1.2
+Version 1.2 - Quick command condition fixes
 
 Updates
 Fixed command **invitelk** command's check command parameter jumping to a non-existent action

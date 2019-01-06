@@ -1,5 +1,5 @@
 # Deathbattle 
-V1 - Version 1
+Version 1 - Release
 
 ## Information
 This is an Deathbattle system that allows users to "fight" each other using bot narrated events  
