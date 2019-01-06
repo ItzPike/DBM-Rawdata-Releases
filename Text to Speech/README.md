@@ -1,5 +1,5 @@
 # Text to Speech 
-Version 1 - Release
+Version 1.1 - New ttsvc command  
 
 ## Information
 This is an easy and quick Text to Speech command  
@@ -10,7 +10,8 @@ This command generates an MP3 file locally and sends it
 Right after it sends it, it'll delete it off the local drive to not clutter anything up  
 
 ## Commands
-- tts [text]
+- tts [text] - Takes input of text and turns it into a mp3 speech file, sending it to the same channel
+- ttsvc [text]- Takes input of text and turns it into a mp3 speech file, sending it to the same channel and then joining command author's vc to speak the message(The input has to have more than 47 characters)
 
 ## Warning
 This API can only process text that are under 200 characters  
