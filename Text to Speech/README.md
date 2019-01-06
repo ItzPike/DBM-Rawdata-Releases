@@ -17,7 +17,7 @@ This API can only process text that are under 200 characters
 This for the free version of the google text to speech api of course  
 
 This command was tested inside the windows command line and not ran within DBM    
-this command may not work while being ran within DBM, just be advised  
+This command may not work while being ran within DBM, just be advised  
 
 My Node Version - v10.9.0   
 My NPM Version - v6.2.0  
