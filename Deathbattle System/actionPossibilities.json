@@ -56,7 +56,7 @@
    {  
       "Cat":{  
          "damage":15,
-         "format":"{player1} throws a cat at {player2} and it scracthes {player2} causing severe bleeding"
+         "format":"{player1} throws a cat at {player2} and it scratches {player2} causing severe bleeding"
       }
    },
    {  
