@@ -1,5 +1,5 @@
 # Deathbattle 
-Version 1 - Release
+Version 1.1 - File failsafe fixes
 
 ## Information
 This is an Deathbattle system that allows users to "fight" each other using bot narrated events  

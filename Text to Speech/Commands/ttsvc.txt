@@ -47,7 +47,7 @@
     {
       "behavior": "1",
       "interpretation": "0",
-      "code": "const googleTTS = require('google-tts-api');\nconst fs = require('fs');\nconst request = require('request');\nconst firstResponse = tempVars(\"firstResponse\");\nconst randomString =  Math.random().toString(36).substring(7);\nconst _this = this;\n\n\nif (firstResponse.length <= 200 && firstResponse.length > 47) {\ngoogleTTS(firstResponse, 'en', 1)   // speed normal = 1 (default), slow = 0.24\n.then(function (url) {\n  request\n  .get(url)\n  .on('error', function(err) {\n    // handle error\n  })\n  .pipe(fs.createWriteStream(\"resources/\" + randomString + '.mp3'));\n  _this.storeValue(randomString, 1, \"randomString\", cache);\n  _this.callNextAction(cache);\n})\n.catch(function (err) {\n  console.error(err.stack);\n});\n} else {\n    msg.channel.send(msg.author + \", please provide a text that has less than 200 characters and more than 47 characters to speak in voice chat\")\n                    .then(Errmsg => {\n                        Errmsg.delete(10000);\n                    });\n}\n",
+      "code": "const googleTTS = require('google-tts-api');\nconst fs = require('fs');\nconst request = require('request');\nconst firstResponse = tempVars(\"firstResponse\");\nconst randomString =  Math.random().toString(36).substring(7);\nconst _this = this;\n\n\nif (firstResponse.length < 200 && firstResponse.length > 47) {\ngoogleTTS(firstResponse, 'en', 1)   // speed normal = 1 (default), slow = 0.24\n.then(function (url) {\n  request\n  .get(url)\n  .on('error', function(err) {\n    // handle error\n  })\n  .pipe(fs.createWriteStream(\"resources/\" + randomString + '.mp3'));\n  _this.storeValue(randomString, 1, \"randomString\", cache);\n  _this.callNextAction(cache);\n})\n.catch(function (err) {\n  console.error(err.stack);\n});\n} else {\n    msg.channel.send(msg.author + \", please provide a text that has less than 200 characters and more than 47 characters to speak in voice chat\")\n                    .then(Errmsg => {\n                        Errmsg.delete(10000);\n                    });\n}\n",
       "storage": "0",
       "varName": "",
       "name": "Run Script"
@@ -55,7 +55,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "📨 Generating MP3 file...",
+      "message": "?? Generating MP3 file...",
       "storage": "1",
       "varName2": "promptOne",
       "name": "Send Message"
@@ -110,7 +110,7 @@
       "name": "Leave Voice Channel"
     },
     {
-      "time": "5",
+      "time": "1",
       "measurement": "2",
       "name": "Wait"
     },

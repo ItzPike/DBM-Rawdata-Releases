@@ -19,7 +19,7 @@
       "value": "",
       "iftrue": "0",
       "iftrueVal": "",
-      "iffalse": "1",
+      "iffalse": "2",
       "iffalseVal": "5",
       "name": "Check Variable"
     },
@@ -27,7 +27,17 @@
       "storage": "3",
       "varName": "deathbattleTest",
       "changeType": "0",
-      "value": "\"t23oigh2ig\"",
+      "value": "\"passed\"",
+      "name": "Control Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "3",
+      "varName": "deathbattleTest",
+      "changeType": "0",
+      "value": "\"failed\"",
       "name": "Control Variable"
     }
   ]

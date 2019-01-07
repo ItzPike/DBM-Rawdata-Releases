@@ -1,5 +1,5 @@
 # Text to Speech 
-Version 1.1 - New ttsvc command  
+Version 1.2 - Bug fixes and wait time changes
 
 ## Information
 This is an easy and quick Text to Speech command  
@@ -11,7 +11,7 @@ Right after it sends it, it'll delete it off the local drive to not clutter anyt
 
 ## Commands
 - tts [text] - Takes input of text and turns it into a mp3 speech file, sending it to the same channel
-- ttsvc [text]- Takes input of text and turns it into a mp3 speech file, sending it to the same channel and then joining command author's vc to speak the message(The input has to have more than 47 characters)
+- ttsvc [text]- Takes input of text and turns it into a mp3 speech file, sending it to the same channel and then joining command author's vc to speak the message (The input has to have more than 47 characters)
 
 ## Warning
 This API can only process text that are under 200 characters  

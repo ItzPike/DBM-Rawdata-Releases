@@ -15,19 +15,29 @@
     {
       "storage": "1",
       "varName": "testResult",
-      "comparison": "0",
-      "value": "",
+      "comparison": "6",
+      "value": "TestPass",
       "iftrue": "0",
       "iftrueVal": "",
-      "iffalse": "1",
+      "iffalse": "2",
       "iffalseVal": "5",
       "name": "Check Variable"
     },
     {
-      "storage": "3",
+      "storage": "1",
       "varName": "deathbattleTest",
       "changeType": "0",
-      "value": "\"t23oigh2ig\"",
+      "value": "\"passed\"",
+      "name": "Control Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "deathbattleTest",
+      "changeType": "0",
+      "value": "\"failed\"",
       "name": "Control Variable"
     }
   ]

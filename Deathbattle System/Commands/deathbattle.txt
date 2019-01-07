@@ -7,8 +7,8 @@
     {
       "storage": "3",
       "varName": "deathbattleTest",
-      "comparison": "0",
-      "value": "0",
+      "comparison": "6",
+      "value": "passed",
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "2",
