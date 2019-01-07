@@ -57,5 +57,8 @@ Finishing Date - 1/5/19
 Testing Phase - 1/5/19 | Status: ~ In Progress ~ 9:24PM EST  
 (Update) Testing Phase - 1/6/19 | Status: Finished 2:25AM EST  
   
-Secondary Testing - 1/6/19 | Status: ~ In Progress ~ 2:26 AM EST
+Secondary Testing - 1/6/19 | Status: ~ In Progress ~ 2:26 AM EST | Update Status: Cancelled 
+
+## Preview
+https://rem-best-girl.anime-chan.xyz/u/21.04.24-06.01.19.mp4
 
