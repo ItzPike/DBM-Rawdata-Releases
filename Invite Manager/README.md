@@ -28,7 +28,6 @@ If you have any suggestions or issues, feel free to contact me or open an issue 
 ## Events
 These events that are **REQUIRED** for the **playerinvite** command to work
 
-- storeInvites - Store invites for all servers  
 - serverJoin - Stores the invites for the server  
 - memberJoin - Stores which invite the member used to join  
 
