@@ -158,7 +158,7 @@
     {
       "behavior": "1",
       "interpretation": "0",
-      "code": "msg.author.lastMessage.delete()\nvar numberOfMembers = tempVars('numberOfMembers').content\nvar giveawayPrompt = tempVars('giveawayPrompt')\n\nif (!isNaN(numberOfMembers)) {\n  var numberOfWinners = parseInt(numberOfMembers)\n  this.storeValue(numberOfMembers, 1, 'numberOfMembers', cache)\n  this.callNextAction(cache)\n} else {\n  msg.channel.send({\n    embed: {\n      color: 0xff6666,\n      author: {\n        name: 'Error - Invalid Number',\n        icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n      },\n      description: 'You have entered a invalid number of members, please activate the command again to retry \\n \\n Some example responses are 1, 5, or 7'\n    }\n  })\n  giveawayPrompt.delete()\n}",
+      "code": "msg.author.lastMessage.delete()\nvar numberOfMembers = tempVars('numberOfMembers').content\nvar giveawayPrompt = tempVars('giveawayPrompt')\n\nif (!isNaN(numberOfMembers) && parseInt(numberOfMembers) > 0) {\n  var numberOfWinners = parseInt(numberOfMembers)\n  this.storeValue(numberOfMembers, 1, 'numberOfMembers', cache)\n  this.callNextAction(cache)\n} else {\n  msg.channel.send({\n    embed: {\n      color: 0xff6666,\n      author: {\n        name: 'Error - Invalid Number',\n        icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n      },\n      description: 'You have entered a invalid number of members, please activate the command again to retry \\n \\n Some example responses are 1, 5, or 7'\n    }\n  })\n  giveawayPrompt.delete()\n}",
       "storage": "0",
       "varName": "",
       "name": "Run Script"
