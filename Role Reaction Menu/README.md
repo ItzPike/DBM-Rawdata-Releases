@@ -1,4 +1,4 @@
-# Invite Manager 
+# Role Reaction Menu
 Version 1 - Initial Release
 
 ## Information
