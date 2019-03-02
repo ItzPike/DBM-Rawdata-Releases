@@ -5,7 +5,7 @@
   "_id": "DtBMG",
   "actions": [
     {
-      "member": "0",
+      "member": "1",
       "varName": "",
       "permission": "MANAGE_ROLES",
       "iftrue": "0",
