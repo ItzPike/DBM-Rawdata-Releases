@@ -37,18 +37,12 @@
       "name": "Control Variable"
     },
     {
+      "behavior": "1",
+      "interpretation": "1",
+      "code": "\n  const _this = this;\n\n  msg.channel.awaitMessages(response => response, {\n    max: 1,\n    time: 30000,\n    errors: ['time'],\n  })\n  .then((collected) => {\n      _this.storeValue(collected.first(), 1, \"giveawayObject\", cache);\n      _this.callNextAction(cache);\n    })\n    .catch((error) => {\n      console.log(error);\n      msg.channel.send('Command timeout!');\n    });\n",
       "storage": "0",
       "varName": "",
-      "filter": "content",
-      "max": "1",
-      "time": "20000",
-      "storage2": "1",
-      "varName2": "giveawayObject",
-      "iftrue": "0",
-      "iftrueVal": "",
-      "iffalse": "2",
-      "iffalseVal": "21",
-      "name": "Await Response Call Action"
+      "name": "Run Script"
     },
     {
       "message": "0",
@@ -117,18 +111,12 @@
       "name": "Control Variable"
     },
     {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "\n  const _this = this;\n\n  msg.channel.awaitMessages(response => response, {\n    max: 1,\n    time: 30000,\n    errors: ['time'],\n  })\n  .then((collected) => {\n      _this.storeValue(collected.first(), 1, \"numberOfMembers\", cache);\n      _this.callNextAction(cache);\n    })\n    .catch((error) => {\n      console.log(error);\n      msg.channel.send('Command timeout!');\n    });\n",
       "storage": "0",
       "varName": "",
-      "filter": "content",
-      "max": "1",
-      "time": "20000",
-      "storage2": "1",
-      "varName2": "numberOfMembers",
-      "iftrue": "0",
-      "iftrueVal": "",
-      "iffalse": "2",
-      "iffalseVal": "21",
-      "name": "Await Response Call Action"
+      "name": "Run Script"
     },
     {
       "message": "1",
@@ -170,7 +158,7 @@
     {
       "behavior": "1",
       "interpretation": "0",
-      "code": "msg.author.lastMessage.delete()\nvar numberOfMembers = tempVars('numberOfMembers').content\nvar giveawayPrompt = tempVars('giveawayPrompt')\n\nif (!isNaN(numberOfMembers)) {\n  var numberOfWinners = parseInt(numberOfMembers)\n  this.storeValue(numberOfMembers, 1, 'numberOfMembers', cache)\n  this.callNextAction(cache)\n} else {\n  msg.channel.send({\n    embed: {\n      color: 0xff6666,\n      author: {\n        name: 'Error - Invalid Number',\n        icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n      },\n      description: 'You have entered a invalid number of members, please activate the command again to retry \\n \\n Some example responses are 1, 5, or 7'\n    }\n  })\n  giveawayPrompt.delete()\n}",
+      "code": "msg.author.lastMessage.delete()\nvar numberOfMembers = tempVars('numberOfMembers').content\nvar giveawayPrompt = tempVars('giveawayPrompt')\n\nif (!isNaN(numberOfMembers) && parseInt(numberOfMembers) > 0) {\n  var numberOfWinners = parseInt(numberOfMembers)\n  this.storeValue(numberOfMembers, 1, 'numberOfMembers', cache)\n  this.callNextAction(cache)\n} else {\n  msg.channel.send({\n    embed: {\n      color: 0xff6666,\n      author: {\n        name: 'Error - Invalid Number',\n        icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n      },\n      description: 'You have entered a invalid number of members, please activate the command again to retry \\n \\n Some example responses are 1, 5, or 7'\n    }\n  })\n  giveawayPrompt.delete()\n}",
       "storage": "0",
       "varName": "",
       "name": "Run Script"
@@ -189,18 +177,12 @@
       "name": "Control Variable"
     },
     {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "\n  const _this = this;\n\n  msg.channel.awaitMessages(response => response, {\n    max: 1,\n    time: 30000,\n    errors: ['time'],\n  })\n  .then((collected) => {\n      _this.storeValue(collected.first(), 1, \"giveawayTime\", cache);\n      _this.callNextAction(cache);\n    })\n    .catch((error) => {\n      console.log(error);\n      msg.channel.send('Command timeout!');\n    });\n",
       "storage": "0",
       "varName": "",
-      "filter": "content",
-      "max": "1",
-      "time": "20000",
-      "storage2": "1",
-      "varName2": "giveawayTime",
-      "iftrue": "0",
-      "iftrueVal": "",
-      "iffalse": "2",
-      "iffalseVal": "21",
-      "name": "Await Response Call Action"
+      "name": "Run Script"
     },
     {
       "message": "1",
@@ -337,7 +319,7 @@
     {
       "behavior": "1",
       "interpretation": "0",
-      "code": "async function getReactions () {\n  try {\n    var giveawayMsg = tempVars('giveawayMessageSent')\n    var giveawayEmbed = tempVars('giveawayMessage')\n    var numberOfMembers = tempVars('numberOfMembers')\n    var winnerArray = []\n    var winnerText = ''\n    var users = await giveawayMsg.reactions.get('🎉').fetchUsers()\n    var userArray = users.array()\n    if (userArray.length > 1) {\n      if (userArray.length > numberOfMembers) {\n        for (var i = 0; i < numberOfMembers; i++) {\n          var randomNumber = Math.floor(Math.random() * userArray.length) + 1\n          var randomuser = await userArray[randomNumber]\n          winnerArray.push(randomuser)\n          userArray.splice(randomNumber, randomNumber)\n        }\n        for (i = 0; i < winnerArray.length; i++) {\n          winnerText = winnerText + winnerArray[i] + '\\n'\n        }\n        giveawayEmbed.author.name = '🎉 Giveaway Ended 🎉';\n        giveawayEmbed.description = giveawayEmbed.description + '\\n \\n Winners: \\n' + winnerText\n        giveawayEmbed.footer.text = giveawayEmbed.footer.text.replace('will end', 'ended')\n        giveawayMsg.edit(giveawayEmbed)\n        giveawayMsg.channel.send('🎉 Congratulations! 🎉 \\n' + winnerText + 'They have won **' + tempVars('giveawayObject').content + '**')\n      } else {\n        for (i = 0; i < userArray.length - 1; i++) {\n          var randomNumber = Math.floor(Math.random() * userArray.length) + 1\n          var randomuser = await userArray[randomNumber]\n          winnerArray.push(randomuser)\n          userArray.splice(randomNumber, randomNumber)\n        }\n        for (i = 0; i < winnerArray.length; i++) {\n          winnerText = winnerText + winnerArray[i] + '\\n'\n        }\n        giveawayEmbed.author.name = '🎉 Giveaway Ended 🎉'\n        giveawayEmbed.description = giveawayEmbed.description + '\\n \\n Winners: \\n' + winnerText\n        giveawayMsg.edit(giveawayEmbed)\n        giveawayMsg.channel.send('🎉 Congratulations! 🎉 \\n' + winnerText + '\\nThey have won **' + tempVars('giveawayObject').content + '**\\n \\nNote:The number of people who reacted isn\\'t enough to satisfy the numbers of members that can win so the bot has gotten the maximum number of people it can draw to win.')\n      }\n    } else {\n      msg.channel.send({\n        embed: {\n          color: 0xff6666,\n          author: {\n            name: 'No one reacted',\n            icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n          },\n          description: 'None has reacted so no one won. Oh well'\n        }\n      })\n    }\n  } catch (error) {\n    msg.channel.send({\n      embed: {\n        color: 0xff6666,\n        author: {\n          name: 'Error - Giveaway Error',\n          icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n        },\n        description: 'Please retry the command, the bot has errored \\n This may be due to the fact that it may of not been able to grab the reactions \\n An error message has been outputted to console for futher debugging'\n      }\n    })\n    console.log('Giveaway Command Error: ' + error)\n  }\n}\ngetReactions()\n",
+      "code": "async function getReactions () {\n  try {\n    var giveawayMsg = tempVars('giveawayMessageSent');\n    var giveawayEmbed = tempVars('giveawayMessage');\n    var numberOfMembers = tempVars('numberOfMembers');\n    var winnerArray = [];\n    var winnerText = '';\n    var users = await giveawayMsg.reactions.get('🎉').fetchUsers()\n    var userArray = users.array();\n    \n    if (userArray.length > 1) {\n      userArray = userArray.filter(function(item) { \n        return item.id !== client.user.id\n      })\n      if (userArray.length >= numberOfMembers) {\n        for (var i = 0; i < numberOfMembers; i++) {\n            if (userArray[i].id != client.user.id) {\n                var randomNumber = Math.floor(Math.random() * userArray.length);\n                var randomuser = await userArray[randomNumber];\n                winnerArray.push(randomuser);\n                userArray.splice(userArray.indexOf(randomNumber), randomNumber);\n            }\n        }\n        for (i = 0; i < winnerArray.length; i++) {\n          winnerText = winnerText + winnerArray[i] + '\\n'\n        }\n        giveawayEmbed.author.name = '🎉 Giveaway Ended 🎉';\n        giveawayEmbed.description = giveawayEmbed.description + '\\n \\n Winners: \\n' + winnerText\n        giveawayEmbed.footer.text = giveawayEmbed.footer.text.replace('will end', 'ended');\n        giveawayMsg.edit(giveawayEmbed)\n        giveawayMsg.channel.send('🎉 Congratulations! 🎉 \\n' + winnerText + 'They have won **' + tempVars('giveawayObject').content + '**');\n      } else {\n        for (i = 0; i < userArray.length - 1; i++) {\n            if (userArray[i].id != client.user.id) {\n                var randomNumber = Math.floor(Math.random() * userArray.length);\n                var randomuser = await userArray[randomNumber];\n                winnerArray.push(randomuser)\n                userArray.splice(userArray.indexOf(randomNumber) , randomNumber);\n            }\n        }\n        for (i = 0; i < winnerArray.length; i++) {\n          winnerText = winnerText + winnerArray[i] + '\\n';\n        }\n        giveawayEmbed.author.name = '🎉 Giveaway Ended 🎉'\n        giveawayEmbed.description = giveawayEmbed.description + '\\n \\n Winners: \\n' + winnerText\n        giveawayMsg.edit(giveawayEmbed)\n        giveawayMsg.channel.send('🎉 Congratulations! 🎉 \\n' + winnerText + '\\nThey have won **' + tempVars('giveawayObject').content + '**\\n \\nNote:The number of people who reacted isn\\'t enough to satisfy the numbers of members that can win so the bot has gotten the maximum number of people it can draw to win.')\n      }\n    } else {\n      msg.channel.send({\n        embed: {\n          color: 0xff6666,\n          author: {\n            name: 'No one reacted',\n            icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n          },\n          description: 'None has reacted so no one won. Oh well'\n        }\n      })\n    }\n  } catch (error) {\n    msg.channel.send({\n      embed: {\n        color: 0xff6666,\n        author: {\n          name: 'Error - Giveaway Error',\n          icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n        },\n        description: 'Please retry the command, the bot has errored \\n This may be due to the fact that it may of not been able to grab the reactions \\n An error message has been outputted to console for futher debugging'\n      }\n    })\n    console.log('Giveaway Command Error: ' + error)\n  }\n}\ngetReactions()\n",
       "storage": "0",
       "varName": "",
       "name": "Run Script"
