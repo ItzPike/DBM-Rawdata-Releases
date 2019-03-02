@@ -1,0 +1,15 @@
+{
+  "name": "reactionStart",
+  "temp": "",
+  "event-type": "1",
+  "_id": "Lwriz",
+  "actions": [
+    {
+      "storage": "3",
+      "varName": "reactionRoleInf",
+      "changeType": "0",
+      "value": "[]",
+      "name": "Control Variable"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "reactionGet",
+  "temp": "msgReaction",
+  "event-type": "28",
+  "_id": "zimku",
+  "actions": [
+    {
+      "reaction": "1",
+      "varName": "msgReaction",
+      "info": "0",
+      "storage": "1",
+      "varName2": "messageRct",
+      "name": "Store Reaction Info"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "1",
+      "code": "const reaction = tempVars('msgReaction');\nconst msgRct = tempVars('messageRct');\nconst rectarray = globalVars('reactionRoleInf');\nvar usrWhoReacted = reaction.users.last();\nconst _this = this;\n\n// Setings\n\nconst dmUserAfter = true; // Default, can be changed to false\n\n//\n\nasync function checkRoles() {\n    if (usrWhoReacted.id != client.user.id) {\n        for (i = 0; i < rectarray.length; i++) {\n            if (rectarray[i][msgRct.id] != null) {\n                var newArr = rectarray[i][msgRct.id];\n                for (io = 0; io < newArr.length; io++) {\n                    if (newArr[io][0] == reaction.emoji.name) {\n                        var newUsr = await msgRct.guild.fetchMember(usrWhoReacted);\n                        var checkRole = await msgRct.guild.roles.get(newArr[io][1])\n                        if (checkRole != null) {\n                            if (newUsr.roles.has(newArr[io][1])) {\n                                var tempThing = globalVars('reactionRoleInf');\n                                tempThing[i][msgRct.id][3] = await reaction.users.array();\n                                _this.storeValue(tempThing, 3, 'reactionRoleInf', cache)\n                                break;\n                            } else {\n                                var tempThing = globalVars('reactionRoleInf');\n                                tempThing[i][msgRct.id][3] = await reaction.users.array();\n                                _this.storeValue(tempThing, 3, 'reactionRoleInf', cache)\n                                newUsr.addRole(newArr[io][1]);\n                                if (dmUserAfter) {\n                                    newUsr.send(`Rôle ${newArr[io][2]}} ajouté avec succès sur le serveur ${msgRct.guild.name}`);\n                                }\n                                break;\n                            }\n                        } else {\n                            msgRct.edit({\n                                embed: {\n                                    color: 0xff0000,\n                                    title: \"Role Reaction Menu\",\n                                    description: `Une erreur est survenue. \\nL'un des rôles n'existe plus {Rôle concerné: ${newArr[io][2]} ! En faiseant cela l'embed à cessé de fonctionner. \\nS'il vous plait refaîtes l'embed`,\n                                    timestamp: new Date()\n                                }\n                            });\n                            break;\n                        }\n                    }\n                }\n            }\n        }\n    }\n\n}\n\ncheckRoles();",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    }
+  ]
+}

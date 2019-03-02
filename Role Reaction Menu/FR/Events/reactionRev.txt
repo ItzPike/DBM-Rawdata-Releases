@@ -1,0 +1,24 @@
+{
+  "name": "reactionRev",
+  "temp": "msgReaction",
+  "event-type": "29",
+  "_id": "ZQmhC",
+  "actions": [
+    {
+      "reaction": "1",
+      "varName": "msgReaction",
+      "info": "0",
+      "storage": "1",
+      "varName2": "messageRct",
+      "name": "Store Reaction Info"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "1",
+      "code": "const reaction = tempVars('msgReaction');\nconst msgRct = tempVars('messageRct');\nconst rectarray = globalVars('reactionRoleInf');\nvar usrWhoReacted = reaction.users.array();\nconst _this = this;\n\n// Setings\n\nconst dmUserAfter = true; // Default, can be changed to false\n\n//\n\nasync function checkRoles() {\n        for (i = 0; i < rectarray.length; i++) {\n            if (rectarray[i][msgRct.id] != null) {\n                if (rectarray[i][msgRct.id][3] != null) {\n                usrWhoReacted = rectarray[i][msgRct.id][3].filter(val => !usrWhoReacted.includes(val))[0];\n\n                var newArr = rectarray[i][msgRct.id];\n                for (io = 0; io < newArr.length; io++) {\n                    if (newArr[io][0] == reaction.emoji.name) {\n                        var newUsr = await msgRct.guild.fetchMember(usrWhoReacted);\n                        var checkRole = await msgRct.guild.roles.get(newArr[io][1]);\n                        if (checkRole != null) {\n                            if (!newUsr.roles.has(newArr[io][1])) {\n                                break;\n                            } else {\n                                var tempThing = globalVars('reactionRoleInf');\n                                tempThing[i][msgRct.id][3] = await reaction.users.array();\n                                _this.storeValue(tempThing, 3, 'reactionRoleInf', cache)\n                                newUsr.removeRole(newArr[io][1]);\n                                if (dmUserAfter) {\n                                    newUsr.send(`Le rôle ${newArr[io][2]} à été retiré avec succès du serveur ${msgRct.guild.name}`);\n                                }\n                                break;\n                            }\n                        } else {\n                            msgRct.edit({\n                                embed: {\n                                    color: 0xff0000,\n                                    title: \"Role Reaction Menu\",\n                                    description: `Une erreur est survenue. \\nL'un des rôles n'existe plus {Rôle concerné: ${newArr[io][2]} ! En faiseant cela l'embed à cessé de fonctionner. \\nS'il vous plait refaîtes l'embed`,\n                                    timestamp: new Date()\n                                }\n                            });\n                            break;\n                        }\n                    }\n                }\n            }\n        }\n    }\n\n}\n\ncheckRoles();",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    }
+  ]
+}
