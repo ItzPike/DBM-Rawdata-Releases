@@ -18,6 +18,7 @@ Si vous avez une question ou une suggestion, n'hésitez pas à me contacter via 
 Ces évènements sont **INDISPENSABLES** au bon fonctionnement de la commande
 
 - reactionGet - Contient et vérifie les réactions lors de l'ajout d'un rôle dans le menu !
+- reactionRev - Stocke et vérifie la réaction, en supprimant un rôle si réagi dans un menu
 - reactionStart - Créé un tableau pour que les données soient stockées par "autrole" et soient utilisées par l'évènement précédent reactionGet
 
 ## Attention
