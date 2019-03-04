@@ -18,6 +18,7 @@ If you have any suggestions or issues, feel free to contact me or open an issue 
 These events that are **REQUIRED** for the command to work
 
 - reactionGet - Stores and checks the reaction, adding a role if reacted on a menu
+- reactionRev - Stores and checks the reaction, removing a role if reacted on a menu
 - reactionStart - Intilizes an arary for data to be stored upon by autrole and is used by reactionGet
 
 ## Warning
