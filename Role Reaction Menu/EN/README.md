@@ -13,6 +13,7 @@ If you have any suggestions or issues, feel free to contact me or open an issue 
 
 ## Commands
 - autorole (Prompts you with a prompt to go through to add differnt roles and emoijs)
+- setuptch (Sets the channel mentioned to an update channel. This means the reaction roles in this channel will stay alive after a restart. This is set per server.)
 
 ## Events
 These events that are **REQUIRED** for the command to work
