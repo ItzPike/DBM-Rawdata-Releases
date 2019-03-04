@@ -7,13 +7,12 @@
     {
       "member": "1",
       "varName": "",
-      "info": "6",
-      "varName2": "",
+      "permission": "ADMINISTRATOR",
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "2",
       "iffalseVal": "8",
-      "name": "Check If Member"
+      "name": "Check Member Permissions"
     },
     {
       "channel": "1",
