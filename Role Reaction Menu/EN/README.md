@@ -3,13 +3,9 @@ Version 1 - Initial Release
 
 ## Information
 This is the reaction role command.
-
 This command allows you to create a reaction menu where a player can react to get a specfic role.
-
 Many built in failsafes, including one to shutdown the embed when the role is invalid/removed are also built in.
-
 If you have any suggestions or issues, feel free to contact me or open an issue on this github  
-
 
 ## Commands
 - autorole (Prompts you with a prompt to go through to add differnt roles and emoijs)
