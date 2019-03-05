@@ -1,4 +1,10 @@
 # Invite Manager 
+
+# Note
+This project will be abandoned until I have enough time and motivation to do a full rewrite
+The system as it stands rn is unstable and isn't the most efficient
+No further updates will be done unless 100% required
+
 Version 1.2 - Quick command condition fixes
 
 Updates
