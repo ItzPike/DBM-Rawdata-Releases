@@ -1,0 +1,83 @@
+{
+  "name": "setuptch",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "RtpvK",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "ADMINISTRATOR",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "8",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "1",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "mentCh",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "mentCh",
+      "comparison": "5",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "10",
+      "name": "Check Variable Type"
+    },
+    {
+      "channel": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "chnID",
+      "name": "Store Channel Info"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "1",
+      "code": "const fs = require('fs');\nconst chnlID = tempVars('chnID');\n\nif(fs.existsSync('./resources/serverRoleMenu.json')) {\n    fs.readFile('./resources/serverRoleMenu.json', function read(err, data) {\n        if (err) {\n            throw err;\n        }\n        \n        var newData = JSON.parse(data);\n        newData[msg.guild.id] = chnlID;\n\n        fs.writeFile('./resources/serverRoleMenu.json', JSON.stringify(newData), (err) => {  \n            if (err) {\n                console.log(err);\n            }\n        });\n\n    })\n\n} else {\n    fs.writeFile('./resources/serverRoleMenu.json', '{}', (err) => {  \n        if (err) {\n            console.log(err);\n        }\n\n        fs.readFile('./resources/serverRoleMenu.json', function read(err, data) {\n            if (err) {\n                throw err;\n            }\n    \n            var newData = JSON.parse(data);\n            newData[msg.guild.id] = chnlID;\n    \n            fs.writeFile('./resources/serverRoleMenu.json', JSON.stringify(newData), (err) => {  \n                if (err) {\n                    console.log(err);\n                }\n            });\n        })\n    });\n}",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":white_check_mark: Update channel set to ${tempVars(\"mentCh\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: You do not have permission to use this command!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Please mention a channel!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

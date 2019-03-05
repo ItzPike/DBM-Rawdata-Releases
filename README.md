@@ -7,10 +7,11 @@ If ther are any bugs or reports, just directly open up an issue on this github a
 
 ## Current Commands
 
-#####  - [Giveaway System | V1.1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Giveaway%20System)
-#####  - [Invite Manager | V1.1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Invite%20Manager)
-#####  - [Deathbattle System | V1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Deathbattle%20System)
-#####  - [Text to Speech | V1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Text%20to%20Speech)
+#####  - [Giveaway System | V1.2](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Giveaway%20System)
+#####  - [Invite Manager | V1.2](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Invite%20Manager)
+#####  - [Deathbattle System | V1.1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Deathbattle%20System)
+#####  - [Text to Speech | V1.2](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Text%20to%20Speech)
+#####  - [Reaction Menu | V1]()
 
 ## Folders
 (O) Commands are seperated by folder  
