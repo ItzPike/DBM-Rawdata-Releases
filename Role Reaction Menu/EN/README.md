@@ -20,12 +20,11 @@ These events that are **REQUIRED** for the command to work
 
 ## Warning
 These commands were all tested inside the windows command line and not ran within DBM
+Thanks to Akira#1234, it does seem to be workin from within DBM (horray)
 
 ## Settings
 In the reactionGet and reactionRev scripts, you can edit what the bot sends to the players when they add/remove a reaction/role.
 In the same part you can enable/disable if the bot dms the user at all.
-
-Thanks to Akira#1234, it does seem to be workin from within DBM (horray)
 
 ## Folders
 (O) Commands are separated by folder  
