@@ -11,7 +11,7 @@ If ther are any bugs or reports, just directly open up an issue on this github a
 #####  - [Invite Manager | V1.2](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Invite%20Manager) (Will be abaonded until further notice)
 #####  - [Deathbattle System | V1.1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Deathbattle%20System)
 #####  - [Text to Speech | V1.2](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Text%20to%20Speech)
-#####  - [Reaction Menu | V1]()
+#####  - [Reaction Menu | V1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Role%20Reaction%20Menu)
 
 ## Folders
 (O) Commands are seperated by folder  
