@@ -7,11 +7,11 @@ If ther are any bugs or reports, just directly open up an issue on this github a
 
 ## Current Commands
   
-#####  - [Giveaway System | V1.2](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Giveaway%20System) (Archived)  
-#####  - [Invite Manager | V1.2](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Invite%20Manager) (Archived)  
-#####  - [Deathbattle System | V1.1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Deathbattle%20System) (Archived)  
-#####  - [Text to Speech | V1.2](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Text%20to%20Speech) (Archived)  
-#####  - [Reaction Menu | V1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Role%20Reaction%20Menu)  
+#####  - [Giveaway System | V1.2] (Archived)  
+#####  - [Invite Manager | V1.2] (Archived)  
+#####  - [Deathbattle System | V1.1] (Archived)  
+#####  - [Text to Speech | V1.2] (Archived)  
+#####  - [Reaction Menu | V1]  
 
 ## Archived
 Many commands have been archived due to them not being functional and breaking many of the time.
@@ -19,6 +19,7 @@ The only command that will survive this will be the role action command as that 
 This will mark a fresh start for me, and will be a chance for me to get a fresh start.
 I will release commands here and there and update the old ones.
 Archived commands will NOT be fixed and will no longer be futher supported.
+Please look forward for my la
 
 ## Folders
 (O) Commands are seperated by folder  
