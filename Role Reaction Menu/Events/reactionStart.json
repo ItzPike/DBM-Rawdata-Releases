@@ -5,10 +5,10 @@
   "_id": "Lwriz",
   "actions": [
     {
-      "storage": "3",
-      "varName": "reactionRoleInf",
       "changeType": "0",
       "value": "[]",
+      "storage": "3",
+      "varName": "reactionRoleInf",
       "name": "Control Variable"
     },
     {
