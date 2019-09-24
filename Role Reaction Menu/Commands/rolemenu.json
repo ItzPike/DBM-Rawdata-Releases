@@ -30,8 +30,8 @@
     },
     {
       "behavior": "0",
-      "interpretation": "0",
-      "code": "var randomVar = JSON.stringify(globalVars(\"reactionRoleInf\"));\n\nthis.storeValue(randomVar, 3, 'tempData', cache);",
+      "interpretation": "1",
+      "code": "function ccstringify(object) {\n    var cache = [];\n    var str = JSON.stringify(object,\n    \n        function(key, value) {\n            if (typeof value === 'object' && value !== null) {\n                if (cache.indexOf(value) !== -1) {\n                    return;\n                }\n               \n                cache.push(value);\n            }\n            return value;\n        }, 4);\n    cache = null; \n    return str;\n};\n\n\nvar randomVar = ccstringify(globalVars(\"reactionRoleInf\"));\n\nthis.storeValue(randomVar, 3, 'tempData', cache);",
       "storage": "0",
       "varName": "",
       "name": "Run Script"
