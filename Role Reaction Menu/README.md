@@ -1,6 +1,18 @@
 # Role Reaction Menu
-Version 1 - Initial Release
+Version 1.1 - Performance + Structuring Overhaul
 
+Changelog
+- Optimized storing of reaction roles, removing some unnececary data
+- Moved data storage to a whole seperate file
+- Switched to raw JSON storage, no text for easier diagnosis and preventing any major parsing issues
+- Assigned player reaciton list per emoji, fixing many unreaction issues
+- Every message is now a JSON object and is now not in an list, to further increase performance removing the need to loop through items
+- Fixed 4th item not working at all due to player list overwriting important information
+- Removed rate limit as it causes issues if bot goes down, user will never be allowed to recieve a role from a reaction menu again   
+  
+Upcoming Plans  
+- Action based reaction event like moderation? (Will be a seperate set of commands or may merge with this set)  
+  
 ## Information
 This is the reaction role command.  
 This command allows you to create a reaction menu where a player can react to get a specfic role.  
