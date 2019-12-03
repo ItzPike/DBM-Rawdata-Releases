@@ -1,6 +1,5 @@
 # Warning
 Old files from version 1 will not be compatible with version 1.1 due to strucuturing overhauls.  
-A conversion script may be released but seeing the first version being buggy and basically unreadable, this may not happen.  
 All role menus from version 1 will no longer work with the set of new events  
   
 # Role Reaction Menu
