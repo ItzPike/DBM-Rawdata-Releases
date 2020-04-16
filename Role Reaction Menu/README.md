@@ -12,6 +12,7 @@ Changelog
 - Conversion from old format to new format for fetch channel storage done automatically  
 - Allows for adding and removal of fetched channels by doing seuptch again to the same channnel  
 - Settings added to set how many max roles you can add to an embed in rolemenu command
+- Changed the prompt when setting up the role reactions to embeds and creating more spacing to increase readability
   
 Upcoming Plans  
 - None at the moment, feel free to dm me Pike#0001 for any suggestions!
