@@ -3,16 +3,15 @@ Old files from version 1 will not be compatible with version 1.1 due to strucutu
 All role menus from version 1 will no longer work with the set of new events  
   
 # Role Reaction Menu
-Version 1.1 - Performance + Structuring Overhaul
+Version 1.2 - Custom menu format
 
 Changelog
-- Optimized storing of reaction roles, removing some unnececary data
-- Moved data storage to a whole seperate file
-- Switched to raw JSON storage, no text for easier diagnosis and preventing any major parsing issues
-- Assigned player reaciton list per emoji, fixing many unreaction issues
-- Every message is now a JSON object and is now not in an list, to further increase performance removing the need to loop through items
-- Fixed 4th item not working at all due to player list overwriting important information
-- Removed rate limit as it causes issues if bot goes down, user will never be allowed to recieve a role from a reaction menu again   
+- Restrucuted prompt for rolemenu allowing for a custom format to be inputted  
+- Added settings allowing for multiple channels to be added to be fetched on startup to keep role embed alive  
+- Bug fixes for startup executing multiple times  
+- Conversion from old format to new format for fetch channel storage done automatically  
+- Allows for adding and removal of fetched channels by doing seuptch again to the same channnel  
+- Settings added to set how many max roles you can add to an embed in rolemenu command
   
 Upcoming Plans  
 - None at the moment, feel free to dm me Pike#0001 for any suggestions!
@@ -39,7 +38,9 @@ These commands were all tested inside the windows command line and not ran withi
 
 ## Settings
 In the reactionGet and reactionRev scripts, you can edit what the bot sends to the players when they add/remove a reaction/role.
-In the same part you can enable/disable if the bot dms the user at all.
+In the same part you can enable/disable if the bot dms the user at all.  
+In setuptch you can enable/disable if multiple channels can be set per server.  
+In rolemenu you can set how many max roles to reactions in embeds you can have.  
 
 ## Folders
 (O) Commands are separated by folder  

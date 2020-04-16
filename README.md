@@ -11,7 +11,7 @@ If ther are any bugs or reports, just directly open up an issue on this github a
 #####  - [Invite Manager | V1.2] (Archived)  
 #####  - [Deathbattle System | V1.1] (Archived)  
 #####  - [Text to Speech | V1.2] (Archived)  
-#####  - [Reaction Menu | V1.1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Role%20Reaction%20Menu)
+#####  - [Reaction Menu | V1.2](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Role%20Reaction%20Menu)
 
 ## Archived
 Many commands have been archived due to them not being functional and breaking many of the time.
