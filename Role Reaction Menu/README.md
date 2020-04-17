@@ -15,7 +15,7 @@ Changelog
 - Changed the prompt when setting up the role reactions to embeds and creating more spacing to increase readability
   
 Upcoming Plans  
-- None at the moment, feel free to dm me Pike#0001 for any suggestions!
+- None at the moment, feel free to dm me Pike#3369 for any suggestions!
   
 ## Information
 This is the reaction role command.  

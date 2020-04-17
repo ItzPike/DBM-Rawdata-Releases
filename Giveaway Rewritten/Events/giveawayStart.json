@@ -1,0 +1,16 @@
+{
+    "name": "giveawayStart",
+    "temp": "",
+    "event-type": "1",
+    "_id": "jEKcf",
+    "actions": [
+      {
+        "behavior": "0",
+        "interpretation": "0",
+        "code": "const fs = require('fs');\n\nif (globalVars(\"giveawayStartRan\") == null) {\n    this.storeValue(1, 3, \"giveawayStartRan\", cache);\n    if (!fs.existsSync('./data/giveawayData.json')) {\n        fs.writeFile(\"./data/giveawayData.json\", \"{}\", function(err) {\n            if (err) {\n                return console.log(err);\n            }\n        });\n    }\n}",
+        "storage": "0",
+        "varName": "",
+        "name": "Run Script"
+      }
+    ]
+  }
