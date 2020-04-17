@@ -1,0 +1,40 @@
+## Warning
+Please note that this new system will have a slight delay of 10-15 seconds of drawing a winner.  
+This is due to the fact that every 10 seconds the event checks for giveaways that needs to be drawn and draws each one with a second interval in between to not flood the Discord api.
+When the amount of total giveaways grow, this delay may increase depending on when the giveaways are set to end.
+
+# Giveaway Rewritten
+Version 1 - Release
+
+Changelog
+- Redone the entire command for a system that works after restart
+- Moved to an giveaway ID based system attached to servers
+- Giveaway command setup moved to a embed  
+- Added in gdraw and gend  
+  
+Upcoming Plans  
+- None at the moment, feel free to dm me Pike#3369 for any suggestions!
+  
+## Information
+This is a giveaway command.  
+With this, it allows users to setup giveaways with timers that automatically end and draw winners that react using an emoji.  
+
+## Commands
+- gcreate - Startup the setup giveaway prompt    
+- gdraw [#number of winners] - To be executed in the same channel as giveaways; grabs the latest giveaway and draws selected amount of winners from it  
+- gend [giveaway embed id] - Ends a giveaway early and draws preset amount of winners  
+
+## Events
+These events that are **REQUIRED** for the command to work
+
+- giveawayStart - Creates and checks for required files on startup  
+- giveawayStart - Searches for giveaways that ended and draws a winner from them
+  
+## Warning
+These commands were all tested inside the windows command line and not ran within DBM  
+
+## Folders
+(O) Commands are separated by folder  
+(O) Commands/Events are separated in their own folders
+
+

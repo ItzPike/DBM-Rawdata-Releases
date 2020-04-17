@@ -14,7 +14,7 @@ Changelog
 - Settings added to set how many max roles you can add to an embed in rolemenu command
   
 Upcoming Plans  
-- None at the moment, feel free to dm me Pike#0001 for any suggestions!
+- None at the moment, feel free to dm me Pike#3369 for any suggestions!
   
 ## Information
 This is the reaction role command.  
