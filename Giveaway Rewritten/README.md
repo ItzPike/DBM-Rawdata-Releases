@@ -28,7 +28,7 @@ With this, it allows users to setup giveaways with timers that automatically end
 These events that are **REQUIRED** for the command to work
 
 - giveawayStart - Creates and checks for required files on startup  
-- giveawayStart - Searches for giveaways that ended and draws a winner from them
+- giveawayCheck - Searches for giveaways that ended and draws a winner from them
   
 ## Warning
 These commands were all tested inside the windows command line and not ran within DBM  
