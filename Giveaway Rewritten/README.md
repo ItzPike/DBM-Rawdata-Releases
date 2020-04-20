@@ -23,6 +23,7 @@ With this, it allows users to setup giveaways with timers that automatically end
 - gcreate - Startup the setup giveaway prompt    
 - gdraw [#number of winners] [giveaway message id (optional)] - To be executed in the same channel as giveaways; grabs the latest giveaway (or selected giveaway) and draws selected amount of winners from it. (**Note: Giveaway has to have ended**)
 - gend [giveaway embed id] - Ends a giveaway early and draws preset amount of winners  
+- gstart [item] [time] [# of winners (optional)] - Starts a quick giveaway in one command with only needing a item and a time
 
 ## Events
 These events that are **REQUIRED** for the command to work
