@@ -26,7 +26,8 @@ With this, it allows users to setup giveaways with timers that automatically end
 - gstart [item] [time] [# of winners (optional)] - Starts a quick giveaway in one command with only needing a item and a time
 
 ## Settings
-- In gcreate, there is a timezone setting that you can change on the first few lines. (Takes timezone abbreviations)
+- In gcreate, there is a timezone setting that you can change on the first few lines. (Takes timezone abbreviations)  
+- For above setting for timezones, refer to database [here](https://gist.github.com/aviflax/a4093965be1cd008f172)
 
 ## Events
 These events that are **REQUIRED** for the command to work
