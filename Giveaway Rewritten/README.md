@@ -25,9 +25,11 @@ With this, it allows users to setup giveaways with timers that automatically end
 - gend [giveaway embed id] - Ends a giveaway early and draws preset amount of winners  
 - gstart [item] [time] [# of winners (optional)] - Starts a quick giveaway in one command with only needing a item and a time
 
+## Settings
+- In gcreate, there is a timezone setting that you can change on the first few lines. (Takes timezone abbreviations)
+
 ## Events
 These events that are **REQUIRED** for the command to work
-
 - giveawayStart - Creates and checks for required files on startup  
 - giveawayCheck - Searches for giveaways that ended and draws a winner from them
   
