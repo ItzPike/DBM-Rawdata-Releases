@@ -27,6 +27,9 @@ If you have any suggestions or issues, feel free to contact me or open an issue 
 These events that are **REQUIRED** for the command to work
 
 - reactionStart - Intilizes a file stored in /data folder to store information about the role menus, handles reaction add + remove
+
+## Example
+[![Example](https://i.ibb.co/ccfCvHV/RDFa-Wnd-Oq-F-online-video-cutterco.gif)](http://s1.webmshare.com/ojN40.webm)
   
 ## Warning
 These commands were all tested inside the windows command line and not ran within DBM  
