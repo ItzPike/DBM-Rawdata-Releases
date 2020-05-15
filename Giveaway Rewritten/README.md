@@ -4,13 +4,12 @@ This is due to the fact that every 10 seconds the event checks for giveaways tha
 When the amount of total giveaways grow, this delay may increase depending on when the giveaways are set to end.
 
 # Giveaway Rewritten
-Version 1 - Release
+Version 1.1 - gcreate Visual Changes
 
 Changelog
-- Redone the entire command for a system that works after restart
-- Moved to an giveaway ID based system attached to servers
-- Giveaway command setup moved to a embed  
-- Added in gdraw and gend  
+- Added fields displaying giveaway data
+- Customizable description and title
+- Added debug mode for gcreate
   
 Upcoming Plans  
 - None at the moment, feel free to dm me Pike#3369 for any suggestions!
@@ -28,6 +27,7 @@ With this, it allows users to setup giveaways with timers that automatically end
 ## Settings
 - In gcreate, there is a timezone setting that you can change on the first few lines. (Takes timezone abbreviations)  
 - For above setting for timezones, refer to database [here](https://gist.github.com/aviflax/a4093965be1cd008f172)
+- In gcreate, there is a debug mode that would print all errors that may occur including when await message timers run out.
 
 ## Events
 These events that are **REQUIRED** for the command to work
