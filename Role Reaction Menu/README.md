@@ -3,13 +3,13 @@ Old files from version 1 will not be compatible with version 1.1 due to strucutu
 All role menus from version 1 will no longer work with the set of new events  
   
 # Role Reaction Menu
-Version 1.3 - Cleanup + Simlification
+Version 1.4 - Cleanup + Further Simplification
 
 Changelog
-- Removed two excess events and simplified everything under one event
-- Added menus to work without doing the **setuptch** command
-- Removed the setuptch command
-- Added bolding to the two fields when sending messages after reacting.
+- Removed some excess functions and code, simplifying it
+- Support for roles with spaces in their name when not tagging it
+- Removed format prompt question to avoid further confusion
+- Added title and description customization prompt questions
   
 Upcoming Plans  
 - None at the moment, feel free to dm me Pike#3369 for any suggestions!
@@ -27,9 +27,6 @@ If you have any suggestions or issues, feel free to contact me or open an issue 
 These events that are **REQUIRED** for the command to work
 
 - reactionStart - Intilizes a file stored in /data folder to store information about the role menus, handles reaction add + remove
-
-## Example
-[![Example](https://i.ibb.co/ccfCvHV/RDFa-Wnd-Oq-F-online-video-cutterco.gif)](http://s1.webmshare.com/ojN40.webm)
   
 ## Warning
 These commands were all tested inside the windows command line and not ran within DBM  
