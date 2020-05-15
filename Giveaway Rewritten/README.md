@@ -23,10 +23,14 @@ With this, it allows users to setup giveaways with timers that automatically end
 - gcreate - Startup the setup giveaway prompt    
 - gdraw [#number of winners] [giveaway message id (optional)] - To be executed in the same channel as giveaways; grabs the latest giveaway (or selected giveaway) and draws selected amount of winners from it. (**Note: Giveaway has to have ended**)
 - gend [giveaway embed id] - Ends a giveaway early and draws preset amount of winners  
+- gstart [item] [time] [# of winners (optional)] - Starts a quick giveaway in one command with only needing a item and a time
+
+## Settings
+- In gcreate, there is a timezone setting that you can change on the first few lines. (Takes timezone abbreviations)  
+- For above setting for timezones, refer to database [here](https://gist.github.com/aviflax/a4093965be1cd008f172)
 
 ## Events
 These events that are **REQUIRED** for the command to work
-
 - giveawayStart - Creates and checks for required files on startup  
 - giveawayCheck - Searches for giveaways that ended and draws a winner from them
   
