@@ -5,6 +5,7 @@ All role menus from version 1 will no longer work with the set of new events
 # Role Reaction Menu
 - Version 1.4 - Cleanup + Further Simplification  
 - Version 1.4.1 - Code cleanup with some visual changes
+- Version 1.4.2 - Further code cleanup + simplification
 
 Changelog (1.4)
 - Removed some excess functions and code, simplifying it  
@@ -17,6 +18,10 @@ Changelog (1.4.1)
 - Simplified parts of the code increasing effiency and shortening it in the process  
 - Added bold text formatting to highlight what the prompt expects  
 - Threw error catches into a function thus cleaning up some clutter with the code    
+   
+Changelog (1.4.2)
+- Simplified asking prompts into functions shortening the code massively
+- Made "prompt cancelled" prompts more clear, stating if it was by user request or some other reason  
   
 Upcoming Plans  
 - None at the moment, feel free to dm me Pike#3369 for any suggestions!
