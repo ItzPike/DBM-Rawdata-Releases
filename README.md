@@ -13,7 +13,7 @@ If ther are any bugs or reports, just directly open up an issue on this github a
 #####  - [Text to Speech | V1.2] (Archived)  
 #####  - [Reaction Menu | V1.4.2](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Role%20Reaction%20Menu)
 #####  - [Giveaway Rewritten | V1.2](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Giveaway%20Rewritten)
-#####  - [Rock Paper Scissors | V1]()
+#####  - [Rock Paper Scissors | V1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Rock%20Paper%20Scissors)
 
 ## Archived
 Many commands have been archived due to them not being functional and breaking many of the time.
