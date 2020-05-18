@@ -4,13 +4,19 @@ This is due to the fact that every 10 seconds the event checks for giveaways tha
 When the amount of total giveaways grow, this delay may increase depending on when the giveaways are set to end.
 
 # Giveaway Rewritten
-Version 1.1 - gcreate Visual Changes
-
-Changelog
+- Version 1.1 - gcreate Visual Changes  
+- Version 1.2 - Code cleanup  
+  
+Changelog (v1.1)
 - Added fields displaying giveaway data
 - Customizable description and title
-- Added debug mode for gcreate
+- Added debug mode for gcreate  
   
+Changelog (v1.2)
+- Added awaitMessage functions shortening down the code massively
+- Improved new debug messages
+- Incorporate often used combination of functions into 1 function reducing the lines of code  
+   
 Upcoming Plans  
 - None at the moment, feel free to dm me Pike#3369 for any suggestions!
   
