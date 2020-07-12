@@ -2,7 +2,10 @@
 Please note that this new system will have a slight delay of 10-15 seconds of drawing a winner.  
 This is due to the fact that every 10 seconds the event checks for giveaways that needs to be drawn and draws each one with a second interval in between to not flood the Discord api.
 When the amount of total giveaways grow, this delay may increase depending on when the giveaways are set to end.
-
+  
+## Notice
+All commands except gcreate are broken so far. Will be fixed in the future.
+  
 # Giveaway Rewritten
 - Version 1.1 - gcreate Visual Changes  
 - Version 1.2 - Code cleanup  
