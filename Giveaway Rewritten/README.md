@@ -9,6 +9,7 @@ All commands except gcreate are broken so far. Will be fixed in the future.
 # Giveaway Rewritten
 - Version 1.1 - gcreate Visual Changes  
 - Version 1.2 - Code cleanup  
+- Version 1.3 - Fixes + Update
   
 Changelog (v1.1)
 - Added fields displaying giveaway data
@@ -19,6 +20,15 @@ Changelog (v1.2)
 - Added awaitMessage functions shortening down the code massively
 - Improved new debug messages
 - Incorporate often used combination of functions into 1 function reducing the lines of code  
+
+Changelog (v1.3)
+- Fixed gdraw and gend  
+- Improved code and fixed winner drawing issue (potential) (May of only drawn from the first 100 players)  
+- Gave more clarity to which item someone won from gdraw and which message it came from  
+- Fixed giveaway ending overwriting the intial title  
+- Giveaway ending now supports the new embed layout  
+- New field showing the status of the giveaway  
+- Fixed gdraw filters for new format  
    
 Upcoming Plans  
 - None at the moment, feel free to dm me Pike#3369 for any suggestions!
