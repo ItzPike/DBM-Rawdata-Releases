@@ -1,3 +1,12 @@
+# New Setup Step (IMPORTANT)
+Due to the recent Discord API update, this command set will now require a few intents  
+They are  
+- Server Events  
+- Server Member Events   
+- Both server Message Events  
+  
+Make sure to have these enabled in your developer portal and intents under the extensions tab of your DBM software.
+
 # Warning
 Old files from version 1 will not be compatible with version 1.1 due to strucuturing overhauls.  
 All role menus from version 1 will no longer work with the set of new events  
@@ -23,8 +32,9 @@ Changelog (1.4.2)
 - Simplified asking prompts into functions shortening the code massively
 - Made "prompt cancelled" prompts more clear, stating if it was by user request or some other reason  
   
-Upcoming Plans  
-- None at the moment, feel free to dm me Pike#3369 for any suggestions!
+Changelog (1.4.3)  
+- v12 Fixes that cuase major issues  
+- Reduced load and requests to the api  
   
 ## Information
 This is the reaction role command.  
