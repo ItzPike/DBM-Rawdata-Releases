@@ -12,10 +12,12 @@ Old files from version 1 will not be compatible with version 1.1 due to strucutu
 All role menus from version 1 will no longer work with the set of new events  
   
 # Role Reaction Menu
-- Version 1.4 - Cleanup + Further Simplification  
-- Version 1.4.1 - Code cleanup with some visual changes
-- Version 1.4.2 - Further code cleanup + simplification
-
+- Version 1.4 - Cleanup + Further Simplification   
+- Version 1.4.1 - Code cleanup with some visual changes  
+- Version 1.4.2 - Further code cleanup + simplification  
+- Version 1.4.3 - Minor fixes and updated setup  
+- Version 1.4.4 - Reduced API load and added more failsafes to prevent erroring  
+  
 Changelog (1.4)
 - Removed some excess functions and code, simplifying it  
 - Support for roles with spaces in their name when not tagging it  
@@ -35,7 +37,13 @@ Changelog (1.4.2)
 Changelog (1.4.3)  
 - v12 Fixes that cuase major issues  
 - Reduced load and requests to the api  
-  
+
+Changelog (1.4.4)
+- Reduced API calls to the API (Use more cache) 
+- Prevent adding roles that position is higher than the bot (does not allow bot to add role) in role menu  
+- Added bot perimssion check on rolemenu to make sure the bot can even add roles  
+- Added safety-nets in place when reacting and sending an error message to console and player to notify them of either the lack of permissions causing the inability to add roles.  
+
 ## Information
 This is the reaction role command.  
 This command allows you to create a reaction menu where a player can react to get a specfic role.  

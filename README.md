@@ -15,8 +15,8 @@ If ther are any bugs or reports, just directly open up an issue on this github a
 #####  - [Deathbattle System | V1.1] (Archived)  
 #####  - [Text to Speech | V1.2] (Archived)  
 #####  - [Rock Paper Scissors | V1] (Archived)
-#####  - [Reaction Menu | V1.4.2](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Role%20Reaction%20Menu)
-#####  - [Giveaway Rewritten | V1.2](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Giveaway%20Rewritten)
+#####  - [Reaction Menu | V1.4.4](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Role%20Reaction%20Menu)
+#####  - [Giveaway Rewritten | V1.3](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Giveaway%20Rewritten)
 
 ## Archived
 Many commands have been archived due to them not being functional and breaking many of the time.
