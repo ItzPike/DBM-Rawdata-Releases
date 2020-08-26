@@ -1,0 +1,27 @@
+{
+    "name": "inviteinfo",
+    "permissions": "NONE",
+    "restriction": "1",
+    "_id": "CcKpI",
+    "actions": [
+      {
+        "message": "0",
+        "varName": "",
+        "info": "1",
+        "ParamN": "1",
+        "separator": " ",
+        "storage": "1",
+        "varName2": "messageParam",
+        "count": "",
+        "name": "Store Message Params"
+      },
+      {
+        "behavior": "1",
+        "interpretation": "1",
+        "code": "    //inviteinfo\n    var inviteCode = tempVars(\"messageParam\");\n    var inviteData = globalVars('inviteData');\n    var guildDatabase = globalVars('inviteDatabase');\n    var invitePData = globalVars('invitePData')[\"inviterData\"];\n    var attempToFetch = guildDatabase[msg.guild.id].get(inviteCode);\n\n    async function main() {\n        if (attempToFetch != null) {\n            var playerUsed = \"None\";\n            if (inviteData.hasOwnProperty(inviteCode)) {\n                playerUsed = \"\";\n        \n                for (i = 0; i < inviteData[inviteCode].length; i++) {\n                    var userID = inviteData[inviteCode][i];\n                    var clientFetch = await client.users.fetch(userID)\n                    if (invitePData[msg.guild.id][attempToFetch[\"inviter\"][\"id\"]][\"invites\"].find(inv => inv.id == userID && inv.invalidCause == \"User had left the server\") != null) {\n                        playerUsed += `${clientFetch} (Left server)\\n`\n                    } else {\n                        playerUsed += `${clientFetch}\\n`\n                    }\n        \n                }\n            }\n            var newDate = attempToFetch[\"inviter\"][\"createdAt\"].toLocaleString(\"en-US\", {\n                timeZone: \"UTC\"\n            })\n            msg.channel.send({\n                embed: {\n                    color: 0x0099ff, \n                    title: `Invite Information (${inviteCode})`,\n                    fields: [{\n                            name: `Code creator`,\n                            value: attempToFetch[\"inviter\"],\n                            inline: true\n                        },\n                        {\n                            name: 'Created at',\n                            value: newDate,\n                            inline: true\n                        },\n                        {\n                            name: 'Uses',\n                            value: attempToFetch[\"uses\"],\n                            inline: true\n                        },\n                        {\n                            name: 'Players Used Invite',\n                            value: playerUsed,\n                            inline: true\n                        }\n                    ],\n                    thumbnail: {\n                        url: attempToFetch[\"inviter\"].avatarURL(),\n                    },\n                    timestamp: new Date(),\n                }\n            })\n        } else {\n            errorMessage(\"The code seems to be invalid!\\nPlease check the code and try again!\")\n        }\n    }\n\n    function errorMessage(error) {\n        \n        let errorTemplate = {\n            color: 0xFF0000,\n            title: `Invite Information`,\n            description: error,\n            timestamp: new Date(),\n        }\n\n        msg.channel.send({\n            embed: errorTemplate\n        });\n    }\n\n    main();",
+        "storage": "0",
+        "varName": "",
+        "name": "Run Script"
+      }
+    ]
+  }
