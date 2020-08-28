@@ -1,0 +1,49 @@
+{
+  "name": "gstart",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "UaKps",
+  "actions": [
+    {
+      "message": "0",
+      "varName": "",
+      "info": "0",
+      "ParamN": "1",
+      "separator": "",
+      "storage": "1",
+      "varName2": "itemGiving",
+      "count": "1",
+      "name": "Store Message Params"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "0",
+      "ParamN": "2",
+      "separator": "",
+      "storage": "1",
+      "varName2": "time",
+      "count": "1",
+      "name": "Store Message Params"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "0",
+      "ParamN": "3",
+      "separator": "",
+      "storage": "1",
+      "varName2": "winners",
+      "count": "1",
+      "name": "Store Message Params"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "1",
+      "code": "msg.delete();\nconst Discord = require('discord.js');\nconst fs = require('fs');\nvar item = tempVars(\"itemGiving\");\nvar time = tempVars(\"time\");\nvar winners = tempVars(\"winners\");\n\nvar giveaway = {\n    \"itemGivingAway\": \"\",\n    \"time\": 0,\n    \"winner\": 1,\n    \"finishUnix\": 0,\n    \"channel\": \"\",\n    \"server\": msg.guild.id,\n    \"giveawayMessageID\": \"\",\n    \"id\": Math.floor(Math.random() * 999999) + 100000\n}\n\n\nif (item != null && time != null) {\n    giveaway[\"itemGivingAway\"] = item;\n    giveaway[\"channel\"] = msg.channel.id;\n\n    if (!isNaN(winners)) {\n        if (parseInt(winners) > 0) {\n            giveaway[\"winner\"] = parseInt(winners);\n        }\n    }\n    var tempTime = time;\n    if (tempTime.includes(\"d\") || tempTime.includes(\"h\") || tempTime.includes(\"w\") || tempTime.includes(\"m\")) {\n        let timeUp;\n\n        if (tempTime.includes(\"d\")) {\n            timeUp = \"d\";\n        } else if (tempTime.includes(\"h\")) {\n            timeUp = \"h\";\n        } else if (tempTime.includes(\"w\")) {\n            timeUp = \"w\";\n        } else if (tempTime.includes(\"m\")) {\n            timeUp = \"m\";\n        }\n\n        tempTime = tempTime.split(timeUp);\n        if (!isNaN(tempTime[0])) {\n            tempTime[0] = parseInt(tempTime[0]);\n            switch (timeUp) {\n                case \"d\":\n                    giveaway[\"time\"] = tempTime[0] * 86400;\n                    break;\n                case \"h\":\n                    giveaway[\"time\"] = tempTime[0] * 3600;\n                    break;\n                case \"w\":\n                    giveaway[\"time\"] = tempTime[0] * 604800;\n                    break;\n                case \"m\":\n                    giveaway[\"time\"] = tempTime[0] * 60;\n                    break;\n            }\n            giveaway[\"finishUnix\"] = Math.floor(Date.now() / 1000) + giveaway[\"time\"];\n            var giveawayEmbed = {\n                color: 0x2E7F98,\n                author: {\n                    name: '🎉 New Giveaway 🎉',\n                    icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n                },\n                description: `New giveaway for **${giveaway[\"itemGivingAway\"]}**\\n\\nReact with 🎉 to enter the giveaway!`,\n                footer: {\n                    text: `The giveaway ends on ${new Date(giveaway[\"finishUnix\"] * 1000).toLocaleString(\"en-US\", { timeZone: 'UTC' })} UTC | ${giveaway[\"winner\"]} Winner(s) | ID: ${giveaway[\"id\"]}`\n                }\n            }\n\n            msg.channel.send({embed: giveawayEmbed})\n                .then(giveMsg => {\n                    giveMsg.react(\"🎉\");\n                    giveaway[\"giveawayMessageID\"] = giveMsg.id;\n                    fs.readFile('./data/giveawayData.json', function read(err, data) {\n                        if (err) {\n                            throw err;\n                        }\n                        data = JSON.parse(data);\n\n                        if (!data.hasOwnProperty(msg.guild.id)) {\n                            data[msg.guild.id] = [];\n                        }\n\n                        data[msg.guild.id].push(giveaway);\n\n                        fs.writeFile(\"./data/giveawayData.json\", JSON.stringify(data), function(err) {\n                            if (err) {\n                                return console.log(err);\n                            }\n                        });\n                    });\n                })\n\n        }\n\n    } else {\n        msg.channel.send(\"❌ You did not enter a valid date format!\\n\\n1w | 1d | 1h | 1m\");\n    }\n\n} else {\n    msg.channel.send(\"❌ Please enter atleast an item you are gonig to giveaway and a time!\");\n}",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    }
+  ]
+}

@@ -1,6 +1,3 @@
-# Note
-This is in the beta. Expect bugs and frequent updates.
-
 ## Warning
 This system may not perform as well as it should in larger bots. This is not tested as of yet so I will have no idea what would happen. Any bugs or feedback would be much appreciated. Bugs can be opened up on github or DMed to Pike#6424.
 
