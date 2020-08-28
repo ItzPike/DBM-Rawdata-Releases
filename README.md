@@ -1,6 +1,6 @@
 # DBM Raw Data Releases - PikeNote
   
-## Warning
+## Note
 All commands listed (non-archive) have been ported over to Discord.js v12  
   
 ## Information
