@@ -1,6 +1,12 @@
 ## Warning
-This system may not perform as well as it should in larger bots. This is not tested as of yet so I will have no idea what would happen. Any bugs or feedback would be much appreciated. Bugs can be opened up on github or DMed to Pike#6424.
-
+This system may not perform as well as it should in larger bots. This is not tested as of yet so I will have no idea what would happen. Any bugs or feedback would be much appreciated. Bugs can be opened up on github or DMed to Pike#6424.  
+  
+## Note
+You may need two of the intents enabled:
+- Server invite events  
+- Server member events  
+THese may be needed for the bot to run properly.
+  
 ## Invite Manager Rewritten
 Version 1 - Intial release  
   
