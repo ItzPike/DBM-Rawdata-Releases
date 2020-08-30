@@ -45,7 +45,7 @@ With this, it allows users to setup giveaways with timers that automatically end
 
 ## Settings
 - In gcreate, there is a timezone setting that you can change on the first few lines. (Takes timezone abbreviations)  
-- For above setting for timezones, refer to database [here](https://gist.github.com/aviflax/a4093965be1cd008f172)
+- For above setting for timezones, refer to database [here](https://techsupport.osisoft.com/Documentation/PI-Web-API/help/topics/timezones/iana.html) (The string you put in is the IANA Time Zone Id (For example: "America/Sao_Paulo"))
 - In gcreate, there is a debug mode that would print all errors that may occur including when await message timers run out.
 
 ## Events
