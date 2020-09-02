@@ -56,7 +56,7 @@ Coming soon!
 ### Changelog
 Version 1 - Intial Release  
    
-Verison 1.1  
+Verison 1.1 (Credits to NiceATC#1337(213692669443047424) for the original formatting concept)  
 - Event formatting redone to make it look less bland including now the inviter's valid invites  
 - Settings default format is changed to have a paragraph break to make the uses readable and not cut off  
 
