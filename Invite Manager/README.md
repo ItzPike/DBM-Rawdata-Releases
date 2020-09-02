@@ -33,14 +33,14 @@ If the operation fails, it will return with "failed" along with the reason seper
 If the function succeeds, it will return with the data or "success" if the change had went through. 
 These functions can be ran inside of control variables through putting the function in the value section inside of a dollar sign and two opening and closing brackets (${}).  
   
-- Actions.inviteGet(userIDHere, guildIDHere, invalidReal)  
+- **Actions.inviteGet(userIDHere, guildIDHere, invalidReal)**  
   
 This grabs the user data and returns it. The "invalidReal" variable here needs to be either 1 for real and 0 for invalid.  
 Invalid and real here refers to the virtual counter of "real" invites and the virtual coutner of invalid invites.  
   
-Example: Actions.inviteGet(msg.user.id, msg.guild.id, 1) - Gets the amount of "real" invites from the command author in the server the command is executed in.
+Example: **Actions.inviteGet(msg.user.id, msg.guild.id, 1)** - Gets the amount of "real" invites from the command author in the server the command is executed in.
   
-- Actions.inviteModifyData(userIDHere, guildIDHere, valueChange, invalidReal)  
+- **Actions.inviteModifyData(userIDHere, guildIDHere, valueChange, invalidReal)**  
   
 This modifies the virtual counter of the "real" and "invalid" invites. The "invalidReal" variable here needs to be either 1 for real and 0 for invalid.  
   
@@ -48,7 +48,7 @@ The value change can be any integer and it will modify it by that integer.
 For example, if valueChange was 1, it would add 1 to either real/invalid depending on the invalidReal variable.   
 Having the integer -1 will subtact 1 to either real/invalid depending on the invalidReal  
   
-Example: Actions.inviteModifyData(msg.user.id, msg.guild.id, 1, 1) - Adds 1 "real" invite to the command author in the server the command is executed in.  
+Example: **Actions.inviteModifyData(msg.user.id, msg.guild.id, 1, 1)** - Adds 1 "real" invite to the command author in the server the command is executed in.  
   
 - Example commands   
 Coming soon!  
@@ -56,7 +56,7 @@ Coming soon!
 ### Changelog
 Version 1 - Intial Release  
    
-Verison 1.1 (Credits to NiceATC#1337(213692669443047424) for the original formatting concept)  
+Verison 1.1 **(Credits to NiceATC#1337(213692669443047424) for the original formatting concept)**  
 - Event formatting redone to make it look less bland including now the inviter's valid invites  
 - Settings default format is changed to have a paragraph break to make the uses readable and not cut off  
 
