@@ -5,10 +5,10 @@ This system may not perform as well as it should in larger bots. This is not tes
 You may need two of the intents enabled:
 - Server invite events  
 - Server member events  
-THese may be needed for the bot to run properly.
+These may be needed for the bot to run properly.
   
 ## Invite Manager Rewritten
-Version 1 - Intial release  
+Version 1.1 - Event formatting update + default formatting update  
   
 ## Information
 A entirely new rewritten system to keep track of who invited who and how many one has invited. This new system is completely redone to be more efficient and have a new API-like system to interact with the data. With this, currently you can get invite data from users and change those invite data. This allows anyone to create custom command-sets for this that aren't avaliable. New settings menu allow you to customize what channel to send user join notifications and even allow you to change the text foramt of the notification.
@@ -52,4 +52,11 @@ Example: Actions.inviteModifyData(msg.user.id, msg.guild.id, 1, 1) - Adds 1 "rea
   
 - Example commands   
 Coming soon!  
+
+### Changelog
+Version 1 - Intial Release  
+   
+Verison 1.1  
+- Event formatting redone to make it look less bland including now the inviter's valid invites  
+- Settings default format is changed to have a paragraph break to make the uses readable and not cut off  
 
