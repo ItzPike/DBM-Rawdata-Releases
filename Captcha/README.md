@@ -1,6 +1,5 @@
 # Bugs
-Plesae contact me (Pike#6424) on discord or open up an issue if you experience any issues!
-
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Please contact me (Pike#6424) on discord or open up an issue if you experience any issues!`
 # Captcha Join
 Version 1.1  
   
