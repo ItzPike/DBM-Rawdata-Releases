@@ -1,5 +1,8 @@
+# Bugs
+Plesae contact me (Pike#6424) on discord or open up an issue if you experience any issues!
+
 # Captcha Join
-- Version 1.1  
+Version 1.1  
   
 ## Intents
 Needs **Server Member Intents** for the event to work.
