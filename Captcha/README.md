@@ -1,14 +1,15 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
-# ⚠️ Important ⚠️
+  
+# 📇 Captcha Join 📇
+Version 1.1 - Changelog below  
+  
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
+## ⚠️ Important ⚠️
 **Please contact me (Pike#6424) on discord or open up an issue if you experience any issues!**
   
 Needs **Server Member Intents** for the event to work.
   
 These commands were all tested inside the windows command line and not ran within DBM  
-  
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
-# 📇 Captcha Join 📇
-Version 1.1  
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
   
