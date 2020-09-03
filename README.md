@@ -18,7 +18,7 @@ All commands and events here now have a by default enabled updater that notifies
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 ## Current Systems
   
-#####  - [Invite Manager Rewritten | V1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Invite%20Manager)
+#####  - [Invite Manager Rewritten | V1.1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Invite%20Manager)
 #####  - [Reaction Menu | V1.4.4](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Role%20Reaction%20Menu)
 #####  - [Giveaway Rewritten | V1.3](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Giveaway%20Rewritten)
 #####  - [Captcha | V1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Captcha)
