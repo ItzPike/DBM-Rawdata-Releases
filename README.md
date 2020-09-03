@@ -7,7 +7,7 @@ Any bugs or issues should be directly reported to Pike#6424 on Discord or open u
 
 All commands listed (non-archive) have been ported over to Discord.js v12. All archived commands/events are no longer supported. They are not ported over and will not be updated
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
-##📝  Information 📝
+## 📝  Information 📝  
 Welcome to my raw data repository! Here are many of the command sets I have made. Feel free to look around and if you have any questions, dont hestiate to DM me! I am Pike#6424 and I am also in the main DBM Mods Discord server! When I dont respond in DMs, feel free to DM me again to remind me.  I may forget from time to time.
 
 Most of commands/events here are script based to make them easier to do in DBM.
