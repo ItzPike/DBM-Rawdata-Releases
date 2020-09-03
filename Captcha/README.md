@@ -1,5 +1,8 @@
 # Captcha Join
 - Version 1
+
+## Intents
+Needs **Server Member Intents** for the event to work.
   
 ## Information
 This is a mini command-set that has a fully fleged captcha system that gets captcha images from an api.  
