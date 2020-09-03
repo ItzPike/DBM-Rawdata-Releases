@@ -1,81 +1,88 @@
-# New Setup Step (IMPORTANT)
-Due to the recent Discord API update, this command set will now require a few intents  
-They are  
-- Server Events  
-- Server Member Events   
-- Both server Message Events  
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
+# ⚠️ Important ⚠️
+**Please contact me (Pike#6424) on discord or open up an issue if you experience any issues!**
   
-Make sure to have these enabled in your developer portal and intents under the extensions tab of your DBM software.
+This command set needs new intents to function!
+The intents needed are as follows:
+- **Server Events**  
+- **Server Member Events**   
+- **Both server Message Events** 
 
-# Warning
-Old files from version 1 will not be compatible with version 1.1 due to strucuturing overhauls.  
-All role menus from version 1 will no longer work with the set of new events  
-   
-# Role Reaction Menu
-- Version 1.4.5  
+You **need to enable them** on the **intents settings** under extension in the DBM software and on the **developer panel** directly!
   
-## Information
-This is the reaction role command.  
-This command allows you to create a reaction menu where a player can react to get a specfic role.  
-Many built in failsafes, including one to shutdown the embed when the role is invalid/removed are also built in.  
-If you have any suggestions or issues, feel free to contact me or open an issue on this github  
-
-## Commands
-- rolemenu (Prompts you with a prompt to go through to add differnt roles and emoijs)
-
-## Events
-These events that are **REQUIRED** for the command to work
-
-- reactionStart - Intilizes a file stored in /data folder to store information about the role menus, handles reaction add + remove
-  
-## Warning
 These commands were all tested inside the windows command line and not ran within DBM  
 
-## Settings
-- In the reactionGet and reactionRev scripts, you can edit what the bot sends to the players when they add/remove a reaction/role.
-- In the same part you can enable/disable if the bot dms the user at all.  
-- In setuptch you can enable/disable if multiple channels can be set per server.  
-- In rolemenu you can set how many max roles to reactions in embeds you can have.  
-- In rolemenu you can set debug mode to true to print all errors that occur with await messages including it running out of time.
+**All** events are required usually for the system to work!
+  
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
+# 📇  Role Reaction Menu 📇
+Version 1.4.5 - Changelog below
+  
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
+  
+## 📝Information📝
+This is the role reaction menu system. Using this set of commands and events, every server can set up their own embeds with users being able to react with emojis to receive a certain role. The setup command (rolemenu) gives the user a clear prompt and a way to set up the menu. 
 
+Many checks are in place to check the format of what the users put in and will warn them if any errors are detected. If roles are deleted or are missing, the system can detect this and would remove that prompt.
+
+This menu allows servers to set up say color roles in any way they want and users can freely react and unreact to recieve and remove those roles. It is pretty straight forward and easy to use.
+
+Any questions can be directly towards me (Pike#6424) or an issue can be opened on this Github.
+
+As a guide through the role menu prompt, it would first ask you to set the title and descripton of the embed that is going to be created.
+
+After that and you typing **confirm**, it would proceed you to the next step where you can add in the roles and emoji individually.
+
+Currently, you can provide the name of the role, the id, or even just mention it directly. The format is strictly **role emoji**.
+
+For example, if I wanted to assign the emoji 😃 to the role exampleRole, I would have to type the following:
+**exampleRole 😃**
+  
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
+  
+## Commands
+- rolemenu (Prompts you with a prompt to go through to add differnt roles and emoijs)
+  
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
+  
+## Events
+- reactionStart - Intilizes a file stored in /data folder to store information about the role menus. It also handles the reactions and is responsible for giving the users the roles.
+  
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
+  
 ## Folders
 (O) Commands are separated by folder  
 (O) Commands/Events are separated in their own folders
-
-## Changelog
-- Version 1.4 - Cleanup + Further Simplification   
-- Version 1.4.1 - Code cleanup with some visual changes  
-- Version 1.4.2 - Further code cleanup + simplification  
-- Version 1.4.3 - Minor fixes and updated setup  
-- Version 1.4.4 - Reduced API load and added more failsafes to prevent erroring  
-- Version 1.4.5 - Fixed small bug and style changes  
   
-Changelog (1.4)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
+  
+## Changelog
+**Changelog (1.4)**
 - Removed some excess functions and code, simplifying it  
 - Support for roles with spaces in their name when not tagging it  
 - Removed format prompt question to avoid further confusion  
 - Added title and description customization prompt questions  
 - Added debug mode for rolemenu command  
   
-Changelog (1.4.1)  
+**Changelog (1.4.1)  **
 - Simplified parts of the code increasing effiency and shortening it in the process  
 - Added bold text formatting to highlight what the prompt expects  
 - Threw error catches into a function thus cleaning up some clutter with the code    
    
-Changelog (1.4.2)
+**Changelog (1.4.2)**
 - Simplified asking prompts into functions shortening the code massively
 - Made "prompt cancelled" prompts more clear, stating if it was by user request or some other reason  
    
-Changelog (1.4.3)  
+**Changelog (1.4.3)  **
 - v12 Fixes that cuase major issues  
 - Reduced load and requests to the api  
   
-Changelog (1.4.4)
+**Changelog (1.4.4)**
 - Reduced API calls to the API (Use more cache) 
 - Prevent adding roles that position is higher than the bot (does not allow bot to add role) in role menu  
 - Added bot perimssion check on rolemenu to make sure the bot can even add roles  
 - Added safety-nets in place when reacting and sending an error message to console and player to notify them of either the lack of permissions causing the inability to add roles.  
 
-Changelog (1.4.5)
+**Changelog (1.4.5)**
 - Fixed allowance of foramtting error causing the menu to bug (emoji first and then mention role)  
 - Final menu has mentions instead of just text now (style changes)  
