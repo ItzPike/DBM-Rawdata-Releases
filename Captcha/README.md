@@ -1,6 +1,6 @@
 # Captcha Join
-- Version 1
-
+- Version 1.1  
+  
 ## Intents
 Needs **Server Member Intents** for the event to work.
   
@@ -22,4 +22,8 @@ These commands were all tested inside the windows command line and not ran withi
 (O) Commands/Events are separated in their own folders
 
 ## Changelog
-- Version 1 - Initial Release
+Version 1 - Initial Release  
+  
+Version 2  
+- Put all created captcha in new folder  
+- Clear captcha folder on start (only .png affected for safety reasons)  
