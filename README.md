@@ -2,6 +2,9 @@
   
 ## Note
 All commands listed (non-archive) have been ported over to Discord.js v12  
+
+## Intents
+Needs **Server Member Intents** for the event to work.
   
 ## Information
 In here I keep my Raw Data Releases up to date along with pushing updates to them if needed.  
