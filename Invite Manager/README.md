@@ -16,7 +16,7 @@ These commands were all tested inside the windows command line and not ran withi
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 
 # ✉️  Invite Manager Rewritten ✉️
-Version 1.1 - Changelog below
+Version 1.1.1 - Changelog below
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
   
@@ -104,4 +104,8 @@ Coming soon!
    
 **Verison 1.1** **(Credits to NiceATC#1337(213692669443047424) for the original formatting concept)**  
 - Event formatting redone to make it look less bland including now the inviter's valid invites  
-- Settings default format is changed to have a paragraph break to make the uses readable and not cut off  
+- Settings default format is changed to have a paragraph break to make the uses readable and not cut off 
+  
+Version 1.1.1  
+- Fixed invitetop not ordering players correctly
+
