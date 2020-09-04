@@ -73,7 +73,7 @@ For example, if I wanted to assign the emoji 😃 to the role exampleRole, I wou
 - Simplified asking prompts into functions shortening the code massively
 - Made "prompt cancelled" prompts more clear, stating if it was by user request or some other reason  
    
-**Changelog (1.4.3)  **
+**Changelog (1.4.3)**  
 - v12 Fixes that cuase major issues  
 - Reduced load and requests to the api  
   
