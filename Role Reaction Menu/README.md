@@ -64,7 +64,7 @@ For example, if I wanted to assign the emoji 😃 to the role exampleRole, I wou
 - Added title and description customization prompt questions  
 - Added debug mode for rolemenu command  
   
-**Changelog (1.4.1)  **
+**Changelog (1.4.1)**
 - Simplified parts of the code increasing effiency and shortening it in the process  
 - Added bold text formatting to highlight what the prompt expects  
 - Threw error catches into a function thus cleaning up some clutter with the code    
