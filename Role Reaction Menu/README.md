@@ -86,3 +86,6 @@ For example, if I wanted to assign the emoji 😃 to the role exampleRole, I wou
 **Changelog (1.4.5)**
 - Fixed allowance of foramtting error causing the menu to bug (emoji first and then mention role)  
 - Final menu has mentions instead of just text now (style changes)  
+  
+**Changelog (1.4.6)**  
+- Fixed the menu not recognizing ids and role names  
