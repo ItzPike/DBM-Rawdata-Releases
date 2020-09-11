@@ -1,7 +1,7 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
   
 # 📇 Captcha Join 📇
-Version 1.1 - Changelog below  
+Version 1.2 - Changelog below  
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 ## ⚠️ Important ⚠️
@@ -15,8 +15,8 @@ These commands were all tested inside the windows command line and not ran withi
   
 ## 📝Information📝
 This is a captcha event + command that allows on a per server basis to setup join captchas for their members! The captchas are sent to the users (image) that is fetched directly from an api. When the user replies the correct captcha, it gives them the set role or no role depending on how the roles are set up per server.
-  
-  Every server has the option to select a role through the setrole command. This command allows then to input a mentioned role, role id, role name. Any of these will give the user on join these roles. 
+   
+Every server has the option to select a role through the setrole command. This command allows then to input a mentioned role, role id, role name. Any of these will give the user on join these roles. 
    
 In special cases where the setrole is set to 0, the captcha system would be disabled completely.
 
@@ -47,10 +47,15 @@ Captchas are generated via the api and stored locally in the captchas folder. On
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
   
 ## Changelog
-Version 1 - Initial Release  
+**Version 1** - Initial Release  
   
-Version 2  
+**Version 1.1**  
 - Put all created captcha in new folder  
 - Clear captcha folder on start (only .png affected for safety reasons)  
   
+**Version 1.2**  
+- Allow adding of multiple roles to the captcha command (only for if responding by id or mention)  
+- setrole prompt now warns of not mixing mentions and ids  
+- setrole now also shows info about the new feature allowing for multiple roles  
+   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
