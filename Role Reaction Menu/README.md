@@ -16,7 +16,7 @@ These commands were all tested inside the windows command line and not ran withi
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 # 📇  Role Reaction Menu 📇
-Version 1.4.5 - Changelog below
+Version 1.4.6.1 - Changelog below
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
   
@@ -88,4 +88,7 @@ For example, if I wanted to assign the emoji 😃 to the role exampleRole, I wou
 - Final menu has mentions instead of just text now (style changes)  
   
 **Changelog (1.4.6)**  
-- Fixed the menu not recognizing ids and role names  
+- Fixed the menu not recognizing ids and role names   
+  
+**Changelog (1.4.6.1)**  
+- Missing intents notifier  

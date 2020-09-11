@@ -57,5 +57,8 @@ Captchas are generated via the api and stored locally in the captchas folder. On
 - Allow adding of multiple roles to the captcha command (only for if responding by id or mention)  
 - setrole prompt now warns of not mixing mentions and ids  
 - setrole now also shows info about the new feature allowing for multiple roles  
-   
+  
+**Version 1.2.1**   
+- Missing intents notifier  
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)

@@ -16,7 +16,7 @@ These commands were all tested inside the windows command line and not ran withi
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 
 # ✉️  Invite Manager Rewritten ✉️
-Version 1.2.1 - Fix errors in console  
+Version 1.2.1.1 - Intents check in events  
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
   
@@ -121,6 +121,9 @@ Coming soon!
   
 **Version 1.2.1**  
 - Try catch for event + settings (Hopefully reduces errors in chat) when checking properties  
+  
+**Version 1.2.1.1**  
+- Missing intents notifier  
   
 **Version 1.2.2 (Planned)**  
 - Add toggleable settings to enabled/disable the embed message in favour a simple message.  
