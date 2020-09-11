@@ -16,12 +16,14 @@ I am always taking suggestions and requests and will do my best to update them o
 
 All commands and events here now have a by default enabled updater that notifies the bot owner of an update. It is done only on start.
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
-## Current Systems
+## Current Systems  
   
 #####  - [Invite Manager Rewritten | V1.1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Invite%20Manager)
 #####  - [Reaction Menu | V1.4.4](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Role%20Reaction%20Menu)
 #####  - [Giveaway Rewritten | V1.3](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Giveaway%20Rewritten)
-#####  - [Captcha | V1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Captcha)
+#####  - [Captcha | V1.2](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Captcha)  
+#####  - [Reaction Help | V1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Reaction%20Help)
+  
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 ## Archived
 All archived projects are proejects that I have mostly given up on and/or will no longer maintain. No further updates will be pushed to them. All systems outside will be maintained to the best of my ability
