@@ -6,7 +6,7 @@ This command set needs new intents to function!
 The intents needed are as follows:
 - **Server Events**  
 - **Server Member Events**   
-- **Second server Message Events** 
+- **Both server Message Events** 
 
 You **need to enable them** on the **intents settings** under extension in the DBM software and on the **developer panel** directly!
   
