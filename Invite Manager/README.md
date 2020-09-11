@@ -16,7 +16,7 @@ These commands were all tested inside the windows command line and not ran withi
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 
 # ✉️  Invite Manager Rewritten ✉️
-Version 1.2- Bug fixes + QOL updates  
+Version 1.2.1 - Fix errors in console  
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
   
@@ -118,7 +118,10 @@ Coming soon!
 - Display tags next to the users dispalyed in inviteplayer and inviteinfo data in case the user is not cached on the user side causing <@id> to appear  
 - Redone embed formats adding unicode to inviteplayer and inviteinfo  
 - Allow the system to work after a bot reload (needs a full restart first)  
-
-**Version 1.2.1 (Planned)**
+  
+**Version 1.2.1**  
+- Try catch for event + settings (Hopefully reduces errors in chat) when checking properties  
+  
+**Version 1.2.2 (Planned)**  
 - Add toggleable settings to enabled/disable the embed message in favour a simple message.  
 - Filter users who had left out of invitetop  
