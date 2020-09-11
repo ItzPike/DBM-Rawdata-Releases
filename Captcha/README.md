@@ -7,7 +7,7 @@ Version 1.2 - Changelog below
 ## ⚠️ Important ⚠️
 **Please contact me (Pike#6424) on discord or open up an issue if you experience any issues!**
   
-Needs **Server Member Intents** for the event to work.
+Needs **Server Member Events** intent for the event to work.
   
 These commands were all tested inside the windows command line and not ran within DBM  
   
