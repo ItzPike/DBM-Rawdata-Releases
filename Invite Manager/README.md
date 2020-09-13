@@ -125,6 +125,9 @@ Coming soon!
 **Version 1.2.1.1**  
 - Missing intents notifier  
   
+**Version 1.2.1.2**  
+- Moved data to its own folder to organize  
+  
 **Version 1.2.2 (Planned)**  
 - Add toggleable settings to enabled/disable the embed message in favour a simple message.  
 - Filter users who had left out of invitetop  
