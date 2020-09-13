@@ -128,6 +128,7 @@ Coming soon!
 **Version 1.2.1.2**  
 - Moved data to its own folder to organize  
 - Vanity URL support? (Not tested yet)  
+- Using multiple {user1}/{user2}/{code}/{uses} in template now works  
   
 **Version 1.2.2 (Planned)**  
 - Add toggleable settings to enabled/disable the embed message in favour a simple message.  
