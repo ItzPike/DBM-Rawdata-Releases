@@ -60,5 +60,8 @@ Captchas are generated via the api and stored locally in the captchas folder. On
   
 **Version 1.2.1**   
 - Missing intents notifier  
-
+  
+**Version 1.2.2**  
+- Allow spaces inbetween captcha letters to avoid confusion for users  
+  
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
