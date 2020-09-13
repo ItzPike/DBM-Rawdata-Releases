@@ -86,3 +86,9 @@ Coming with this command set are multiple configurable settings at your disposal
 - Giveaway ending now supports the new embed layout  
 - New field showing the status of the giveaway  
 - Fixed gdraw filters for new format  
+   
+**Changelog (v1.3.1)**  
+- Locally cache giveaway data  
+- Removed reading of file from all commands to switch to cache system  
+- Moved data folders to its own folder for organization purposes   
+- Fixed the index when going through ending active giveaways getting added before the aciton is done  

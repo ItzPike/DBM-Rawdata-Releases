@@ -92,3 +92,7 @@ For example, if I wanted to assign the emoji 😃 to the role exampleRole, I wou
   
 **Changelog (1.4.6.1)**  
 - Missing intents notifier  
+  
+**Changelog (1.4.6.2)**  
+- Moved data files to individual folders  
+  
