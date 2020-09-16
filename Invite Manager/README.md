@@ -136,6 +136,9 @@ Coming soon!
 **Version 1.2.1.4**
 - Fixed small syntax error for API  
   
+**Version 1.2.1.5**
+- inviteinfo erroring with newly created unused codes
+  
 **Version 1.2.2 (Planned)**  
 - Add toggleable settings to enabled/disable the embed message in favour a simple message.  
 - Filter users who had left out of invitetop  
