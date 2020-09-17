@@ -68,7 +68,7 @@ Invalid and real here refers to the virtual counter of "real" invites and the vi
   
 Example: 
 ```js 
-Actions.inviteGet(msg.user.id, msg.guild.id, 1)
+Actions.inviteGet(msg.author.id, msg.guild.id, 1)
 ```
 The above example gets the amount of "real" invites from the command author in the server the command is executed in.
   
@@ -85,7 +85,7 @@ Having the integer -1 will subtact 1 to either real/invalid depending on the inv
   
 Example:
 ```js
-Actions.inviteModifyData(msg.user.id, msg.guild.id, 1, 1)
+Actions.inviteModifyData(msg.author.id, msg.guild.id, 1, 1)
 ```
 The above function call adds 1 "real" invite to the command author in the server the command is executed in.  
   
