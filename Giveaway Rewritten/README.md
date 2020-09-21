@@ -37,7 +37,7 @@ If you have any questions, please report them to me (Pike#6424) on Discord or op
 
 - gend [giveaway embed id] - Ends a giveaway early and draws preset amount of winners  (**Note: Giveaway has to be in-progress**)
 
-- gstart [item] [time] [# of winners (optional)] - Starts a quick giveaway in one command with only needing a item and a time
+- gstart [# of winners (optional)] [time] [item] - Starts a quick giveaway in one command with only needing a item and a time
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
   
