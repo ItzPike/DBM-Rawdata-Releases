@@ -16,7 +16,7 @@ These commands were all tested inside the windows command line and not ran withi
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 # 📇  Role Reaction Menu 📇
-Version 1.4.6.1 - Changelog below
+Version 1.5 - QoL Changes + Role Menu on Old Messages
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
   
@@ -95,4 +95,10 @@ For example, if I wanted to assign the emoji 😃 to the role exampleRole, I wou
   
 **Changelog (1.4.6.2)**  
 - Moved data files to individual folders  
+  
+**Changelog (1.5)**  
+- New NPM module check/install for those who don't have the request module and some new ones required by the system  
+- Steno file write allowing for more safety in writing files; hopefully less failures  
+- Allow existing messages to be role menued  
+- Auto cleanup of reactionRole data file when reaction menus are deleted  
   
