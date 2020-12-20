@@ -101,4 +101,6 @@ For example, if I wanted to assign the emoji 😃 to the role exampleRole, I wou
 - Steno file write allowing for more safety in writing files; hopefully less failures  
 - Allow existing messages to be role menued  
 - Auto cleanup of reactionRole data file when reaction menus are deleted  
+- Small minor instruction syntax fixes  
+- Reduce load to API and use cache instead of fetch  
   
