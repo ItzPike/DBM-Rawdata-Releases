@@ -16,7 +16,7 @@ These commands were all tested inside the windows command line and not ran withi
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 # 📇  Role Reaction Menu 📇
-Version 1.5 - QoL Changes + Role Menu on Old Messages
+Version 1.5.1 - QoL Changes + Role Menu on Old Messages + Bug Fixes
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
   
@@ -103,4 +103,8 @@ For example, if I wanted to assign the emoji 😃 to the role exampleRole, I wou
 - Auto cleanup of reactionRole data file when reaction menus are deleted  
 - Small minor instruction syntax fixes  
 - Reduce load to API and use cache instead of fetch  
+  
+**Changelog (1.5.1)**  
+- Fixed file/folder not being created  
+- Fixed path issues for Linux and Windows (hopefully)
   
